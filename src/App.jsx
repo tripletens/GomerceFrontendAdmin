@@ -1,5 +1,10 @@
+import React from 'react';
+import { NewOrders } from './pages/orders/NewOrders';
+
 const App = () => {
-  return <div>Hello world!</div>;
+  return (
+    <NewOrders/>
+  ) ;
 };
 
 export default App;
