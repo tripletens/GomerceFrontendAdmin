@@ -1,5 +1,7 @@
+import { Categories } from './pages/categories';
+
 const App = () => {
-  return <div>Hello world!</div>;
+	return <Categories />;
 };
 
 export default App;
