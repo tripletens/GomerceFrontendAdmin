@@ -4,6 +4,7 @@ import "./index.css";
 import DashboardTopAnalytics from "../../components/topanalytics";
 import SalesReportChart from "../../components/salesreport";
 import { Box, Grid } from "@mui/material";
+import SalesOrdersChart from "../../components/chartSalesOrders";
 
 const Dashboard = () => {
   return (
@@ -14,7 +15,7 @@ const Dashboard = () => {
           <SalesReportChart/>
         </Grid>
         <Grid item xs={12} sm={12} md={4}>
-            <SalesReportChart/>
+            <SalesOrdersChart/>
         </Grid>
       </Grid>
     </>
