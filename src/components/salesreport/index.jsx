@@ -20,7 +20,7 @@ const SalesReportChart = () => {
   return (
     <>
       <div className="sales_report_box">
-        <h4 className="sales_report_header"> SALES REPORT </h4>
+        <h4 className="sales_report_header"> Sales Report </h4>
         <BasicTab item={tabOptions} />
       </div>
     </>
