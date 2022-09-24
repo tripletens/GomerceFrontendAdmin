@@ -1,15 +1,8 @@
 import React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 import { Box, Grid } from "@mui/material";
-import Container from "@mui/material/Container";
 import "./index.css";
 import logo from "../../assets/gomerce_logo.png";
-import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import TextField from "@mui/material/TextField";
-import AccountCircle from "@mui/icons-material/AccountCircle";
+import { Link } from "react-router-dom";
 
 // welcome to admin login page
 const Login = () => {
@@ -28,14 +21,33 @@ const Login = () => {
                 <img src={logo} className="login_logo" />
                 <form method="POST" className="login_form">
                   <div className="login_form_group">
-                    <label for="email" className="login_label">Email Address: </label>
-                    <input type="text" name="email" className="login_input" placeholder="Enter your email address" />
+                    <label for="email" className="login_label">
+                      Email Address:{" "}
+                    </label>
+                    <input
+                      type="text"
+                      name="email"
+                      className="login_input"
+                      placeholder="Enter your email address"
+                    />
                   </div>
                   <div className="login_form_group">
-                    <label for="password" className="login_label">Password: </label>
-                    <input type="password" name="password" className="login_input" placeholder="Enter your password" />
+                    <label for="password" className="login_label">
+                      Password:{" "}
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      className="login_input"
+                      placeholder="Enter your password"
+                    />
                   </div>
-                  <button className="login_button" type="submit"> Login</button>
+                  <Link to="/dashboard">
+                    <button className="login_button" type="submit">
+                      {" "}
+                      Login
+                    </button>
+                  </Link>
                 </form>
               </div>
             </div>
