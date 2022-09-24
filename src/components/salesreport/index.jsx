@@ -1,17 +1,28 @@
 import React from "react";
 import "./index.css";
+import { Box, Grid } from "@mui/material";
+import Chart from "react-apexcharts";
+import BasicTab from "../tab";
 
 const SalesReportChart = () => {
+  const tabOptions = [
+    {
+      title: "Today",
+    },
+    {
+      title: "Monthly",
+    },
+    {
+      title: "Yearly",
+    },
+  ];
+
   return (
     <>
-      <p> SALES REPORT </p>
-      <Grid container spacing={0}>
-        <Grid item xs={12} sm={12} md={3}>
-          <div className="sales_report_box">
-           
-          </div>
-        </Grid>
-      </Grid>
+      <div className="sales_report_box">
+        <h4 className="sales_report_header"> SALES REPORT </h4>
+        <BasicTab item={tabOptions} />
+      </div>
     </>
   );
 };
