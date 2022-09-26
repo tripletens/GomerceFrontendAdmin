@@ -1,5 +1,7 @@
+import { Orders } from "./pages/orders";
+
 const App = () => {
-  return <div>Hello world!</div>;
+  return <Orders />;
 };
 
 export default App;
