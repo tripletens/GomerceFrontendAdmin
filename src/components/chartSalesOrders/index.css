@@ -1,6 +1,6 @@
 
-.sales_report_box{
-    height: auto;
+.sales_orders_box{
+    height: 300px;
     width: 100%;
     width: auto;
     margin-left: 50px;
@@ -11,7 +11,7 @@
     padding: 30px;
 }
 
-.sales_report_header{
+.sales_orders_header{
     color: #1F2839;
     margin: 20px;
     margin-left: 0px;

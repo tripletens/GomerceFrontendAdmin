@@ -3,7 +3,11 @@ import { styled, useTheme } from '@mui/material/styles';
 // welcome to admin dashboard
 import "./index.css";
 import DashboardTopAnalytics from "../../components/topanalytics";
-import { Box } from "@mui/system";
+import SalesReportChart from "../../components/salesreport";
+import { Box, Grid } from "@mui/material";
+import SalesOrdersChart from "../../components/chartSalesOrders";
+
+{* import { Box } from "@mui/system"; *}
 import AppBarElement from "../../components/appbar";
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -24,8 +28,17 @@ const Dashboard = () => {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <DrawerHeader />
           <DashboardTopAnalytics />
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={12} md={8}>
+              <SalesReportChart/>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4}>
+                <SalesOrdersChart/>
+            </Grid>
+          </Grid>
         </Box>
       </Box>
+
     </>
   );
 };
