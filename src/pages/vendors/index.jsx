@@ -1,8 +1,12 @@
 // welcome to admin dashboard Vendors page
+
+import Vendor from "../../components/vendor/Vendor";
+
+
 export const Vendors = () => {
     return (
         <> 
-            <h1>Welcome to Admin dashboard Vendors</h1>
+            <Vendor />
         </>
     );
 }
