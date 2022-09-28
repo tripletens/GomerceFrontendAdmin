@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { cyan } from '@mui/material/colors';
 import { Box } from "@mui/system";
-import {Avatar, Button, ButtonGroup, Modal,
-        Stack,styled,TextField, Typography,} from "@mui/material";
-import { Add as AddIcon, DateRange, EmojiEmotions, Image,
-        PersonAdd, VideoCameraBack,} from "@mui/icons-material";
+import {
+  Avatar, Button, ButtonGroup, Modal,
+  Stack, styled, TextField, Typography,
+} from "@mui/material";
+import {
+  Add as AddIcon, DateRange, EmojiEmotions, Image,
+  PersonAdd, VideoCameraBack,
+} from "@mui/icons-material";
 
 const SytledModal = styled(Modal)({
   display: "flex",
@@ -21,19 +25,19 @@ const UserBox = styled(Box)({
 });
 
 const BootstrapButton = styled(Button)({
-    boxShadow: 'none',
-    textTransform: 'none',
-    borderRadius: '5em',
-    fontSize: 14,
-    height: "35px",
-    border: '1px solid',
-    lineHeight: 1.5,
-    backgroundColor: cyan[500],
-    borderColor: '#0288d',
-    '&:hover': {  
-        backgroundColor: '#039be5',
-        borderColor: '#039be5',
-    }
+  boxShadow: 'none',
+  textTransform: 'none',
+  borderRadius: '5em',
+  fontSize: 14,
+  height: "35px",
+  border: '1px solid',
+  lineHeight: 1.5,
+  backgroundColor: cyan[500],
+  borderColor: '#0288d',
+  '&:hover': {
+    backgroundColor: '#039be5',
+    borderColor: '#039be5',
+  }
 });
 
 
@@ -41,11 +45,11 @@ const AddItem = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <BootstrapButton 
-          onClick={(e) => setOpen(true)}
-          variant="contained" 
-          startIcon={<AddIcon />} size="medium"> 
-            Add Vendor 
+      <BootstrapButton
+        onClick={(e) => setOpen(true)}
+        variant="contained"
+        startIcon={<AddIcon />} size="medium">
+        Add Vendor
       </BootstrapButton>
 
       <SytledModal
