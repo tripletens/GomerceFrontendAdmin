@@ -2,10 +2,10 @@ import { ChevronRight } from '@mui/icons-material'
 import { Typography } from '@mui/material'
 import { Stack } from '@mui/system'
 import React from 'react'
-import AddItem from './AddItem';
+import AddItem from '../vendor/AddItem'
 
 
-function VendorHeader() {
+function DashboardHeader(props) {
   return (
     <>
         <Stack direction="row" justifyContent='space-between' alignItems="center" margin='30px 0'>
@@ -19,10 +19,10 @@ function VendorHeader() {
                     <Typography> Vendors</Typography>
                 </Stack>
             </Stack>
-            <AddItem />
+            <AddItem/>
         </Stack>
     </>
   )
 }
 
-export default Header
+export default DashboardHeader

@@ -17,17 +17,17 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import Header from './Header';
-import Vendor from './Vendor';
-import {Badge, alpha } from '@mui/material';
-import { Notifications, Mail, Groups, Dashboard, GridView, ProductionQuantityLimits, 
-        Category, ShoppingCart, Reviews, BrandingWatermark, Apps, Security } from '@mui/icons-material';
+
+import { Badge, alpha } from '@mui/material';
+import {
+  Notifications, Mail, Groups, Dashboard, GridView, ProductionQuantityLimits,
+  Category, ShoppingCart, Reviews, BrandingWatermark, Apps, Security
+} from '@mui/icons-material';
 import SearchOutlined from '@mui/icons-material/Search';
-import {  InputBase, Avatar } from '@mui/material'
+import { InputBase, Avatar } from '@mui/material'
 import { Stack } from '@mui/system';
 import { grey } from '@mui/material/colors';
 import Sidebar from '../sidebar';
-import Navbar from '../navbar';
 
 const drawerWidth = 240;
 
@@ -140,53 +140,77 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const Icons = styled(Box)(({theme}) => ({
-    display: 'none',
-    gap: '20px',
-    alignItems: 'center',
-    [theme.breakpoints.up("sm")]:{
-        display: 'flex'
-    }
-})); 
-
-const UserBox = styled(Box)(({theme}) => ({
-    display: 'flex',
-    gap: '10px',
-    alignItems: 'center',
-    [theme.breakpoints.up("sm")]:{
-        display: 'none'
-    }
+const Icons = styled(Box)(({ theme }) => ({
+  display: 'none',
+  gap: '20px',
+  alignItems: 'center',
+  [theme.breakpoints.up("sm")]: {
+    display: 'flex'
+  }
 }));
 
-export default function Dynamics() {
+const UserBox = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  gap: '10px',
+  alignItems: 'center',
+  [theme.breakpoints.up("sm")]: {
+    display: 'none'
+  }
+}));
+
+export default function Navbar({
+  handleDrawerOpen,
+  open,
+  handleDrawerClose,
+  openSideBarFunction
+}) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
-  const openSideBarFunction = () => {
-    setOpen(!open);
-  };
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <Navbar handleDrawerOpen={handleDrawerOpen}
-      open={open}
-      handleDrawerClose={handleDrawerClose}
-      openSideBarFunction={openSideBarFunction} />
-      <Sidebar open={open} handleDrawerClose={handleDrawerClose}
-      />
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        <Header />
-        <Vendor />         
-      </Box>
-    </Box>
+    <>
+      <AppBar position="fixed" open={open}>
+        <Toolbar sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+          <Stack direction='row'>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                marginRight: 5,
+                ...(open && { display: 'none' }),
+              }}>
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap component="div">
+              Gomerce
+            </Typography>
+          </Stack>
+          <Search >
+            <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
+            <SearchIconWrapper> <SearchOutlined /> </SearchIconWrapper>
+          </Search>
+          <Icons>
+            <Badge badgeContent={4} color="error">
+              <Mail color="action" />
+            </Badge>
+            <Badge badgeContent={4} color="error">
+              <Notifications />
+            </Badge>
+            <Avatar sc={{ width: "30px", height: "30px" }} src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              onClick={openSideBarFunction} />
+          </Icons>
+          <UserBox>
+            <Avatar sc={{ width: "30px", height: "30px" }} src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              onClick={openSideBarFunction} />
+            <Typography variant="span">Ajiri</Typography>
+          </UserBox>
+        </Toolbar>
+      </AppBar>
+    </>
   );
 }
