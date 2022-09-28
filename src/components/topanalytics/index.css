@@ -10,7 +10,8 @@
     flex-wrap: wrap;
     border-radius: 8px;
     padding: 10px;
-    margin: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
     
 }
 
@@ -34,7 +35,7 @@
     width: auto;
     border-radius: 8px;
     background-color: #F4F5EF;
-    height: 30px;
+    height: auto;
     padding: 10px;
 }
 
