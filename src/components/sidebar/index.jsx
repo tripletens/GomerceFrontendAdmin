@@ -156,6 +156,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 
 export default function Sidebar(props) {
   const theme = useTheme();
+
   // const [open, setOpen] = React.useState(false);
 
   // const handleDrawerOpen = () => {
@@ -207,6 +208,7 @@ export default function Sidebar(props) {
       "url": "/brands",
       "component": BrandingWatermark
     },
+
     // {
     //   "title": "AUTHENTICATION",
     //   "url": "/brands",
@@ -253,6 +255,121 @@ export default function Sidebar(props) {
                   </value.component>
                   <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
                 </ListItemButton>
+
+                {/* VENDORS,USERS,CATEGORIES,PRODUCTS,ORDERS,REVIEWS,BRANDS */}
+
+                {/* handleOpenVendorsClick, handleOpenUsersClick, handleOpenCategoriesClick
+                handleOpenProductsClick, handleOpenOrdersClick, handleOpenReviewsClick, 
+                handleOpenBrandsClick */}
+                
+                {
+                  value.title === 'VENDORS' ? <Collapse in={props.handleOpenVendorsClick} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      <Link to={value.url}>
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>
+                            <StarBorder />
+                          </ListItemIcon>
+                          <ListItemText primary="Starred" />
+                        </ListItemButton>
+                      </Link>
+                    </List>
+                  </Collapse> : ""
+                }
+
+                {/* users  */}
+
+                {
+                  value.title === 'USERS' ? <Collapse in={props.handleOpenUsersClick} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      <Link to={value.url}>
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>
+                            <StarBorder />
+                          </ListItemIcon>
+                          <ListItemText primary="Starred" />
+                        </ListItemButton>
+                      </Link>
+                    </List>
+                  </Collapse> : ""
+                }
+
+                {
+                  value.title === 'CATEGORIES' ? <Collapse in={props.handleOpenCategoriesClick} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      <Link to={value.url}>
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>
+                            <StarBorder />
+                          </ListItemIcon>
+                          <ListItemText primary="Starred" />
+                        </ListItemButton>
+                      </Link>
+                    </List>
+                  </Collapse> : ""
+                }
+
+                {
+                  value.title === 'PRODUCTS' ? <Collapse in={props.handleOpenProductsClick} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      <Link to={value.url}>
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>
+                            <StarBorder />
+                          </ListItemIcon>
+                          <ListItemText primary="Starred" />
+                        </ListItemButton>
+                      </Link>
+                    </List>
+                  </Collapse> : ""
+                }
+
+                {
+                  value.title === 'ORDERS' ? <Collapse in={props.handleOpenOrdersClick} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      <Link to={value.url}>
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>
+                            <StarBorder />
+                          </ListItemIcon>
+                          <ListItemText primary="Starred" />
+                        </ListItemButton>
+                      </Link>
+                    </List>
+                  </Collapse> : ""
+                }
+
+                {
+                  value.title === 'REVIEWS' ? <Collapse in={props.handleOpenReviewsClick} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      <Link to={value.url}>
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>
+                            <StarBorder />
+                          </ListItemIcon>
+                          <ListItemText primary="Starred" />
+                        </ListItemButton>
+                      </Link>
+                    </List>
+                  </Collapse> : ""
+                }
+
+                {
+                  value.title === 'BRANDS' ? <Collapse in={props.handleOpenBrandsClick} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      <Link to={value.url}>
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>
+                            <StarBorder />
+                          </ListItemIcon>
+                          <ListItemText primary="Starred" />
+                        </ListItemButton>
+                      </Link>
+                    </List>
+                  </Collapse> : ""
+                }
+
+                {/* VENDORS,USERS,CATEGORIES,PRODUCTS,ORDERS,REVIEWS,BRANDS */}
               </ListItem>
             )
           })}
