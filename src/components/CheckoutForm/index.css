@@ -1,0 +1,21 @@
+.form-header {
+	margin-top: 32px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-title {
+	display: flex;
+	gap: 50px;
+	align-items: center;
+}
+
+.continuation {
+	background-color: #ced4da;
+	width: 100px;
+	height: 1px;
+}
+
+.form-name {
+	font-weight: 600;
+}
