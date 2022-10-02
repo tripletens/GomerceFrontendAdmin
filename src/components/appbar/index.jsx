@@ -161,7 +161,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 
 export default function AppBarElement() {
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(true);
 
     const [openDashboard, setOpenDashboard] = React.useState(false);
     const handleOpenDashboardClick = () => {

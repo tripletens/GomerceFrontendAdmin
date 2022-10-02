@@ -436,12 +436,6 @@ export default function Sidebar(props) {
                         {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                       </value.component>
                       <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
-
-                      {/* {props.openProducts ? (
-                        <CloseIcon style={{ width: "32px" }} />
-                      ) : (
-                        <KeyboardArrowDownIcon />
-                      )} */}
                     </ListItemButton>
 
                     {props.openProducts ? <Collapse in={props.handleOpenProductsClick} timeout="auto" unmountOnExit>
@@ -480,12 +474,6 @@ export default function Sidebar(props) {
                         {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                       </value.component>
                       <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
-
-                      {/* {props.openOrders ? (
-                        <CloseIcon style={{ width: "32px" }} />
-                      ) : (
-                        <KeyboardArrowDownIcon />
-                      )} */}
                     </ListItemButton>
 
                     {props.openOrders ? <Collapse in={props.handleOpenOrdersClick} timeout="auto" unmountOnExit>
@@ -524,12 +512,6 @@ export default function Sidebar(props) {
                         {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                       </value.component>
                       <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
-
-                      {/* {props.openReviews ? (
-                        <CloseIcon style={{ width: "32px" }} />
-                      ) : (
-                        <KeyboardArrowDownIcon />
-                      )} */}
                     </ListItemButton>
 
                     {props.openReviews ? <Collapse in={props.handleOpenReviewsClick} timeout="auto" unmountOnExit>
@@ -568,12 +550,6 @@ export default function Sidebar(props) {
                         {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                       </value.component>
                       <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
-
-                      {/* {props.openBrands ? (
-                        <CloseIcon style={{ width: "32px" }} />
-                      ) : (
-                        <KeyboardArrowDownIcon />
-                      )} */}
                     </ListItemButton>
 
                     {props.openBrands ? <Collapse in={props.handleOpenBrandsClick} timeout="auto" unmountOnExit>
