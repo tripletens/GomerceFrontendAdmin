@@ -163,6 +163,11 @@ export default function AppBarElement() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
+    const [openDashboard, setOpenDashboard] = React.useState(false);
+    const handleOpenDashboardClick = () => {
+        setOpenDashboard(!openDashboard);
+    };
+
     const [openVendors, setOpenVendors] = React.useState(false);
     const handleOpenVendorsClick = () => {
         setOpenVendors(!openVendors);
@@ -228,6 +233,9 @@ export default function AppBarElement() {
                 open={open} 
                 handleDrawerClose={handleDrawerClose}
 
+                openDashboard = {openDashboard}
+                handleOpenDashboardClick = {handleOpenDashboardClick}
+
                 openVendors = {openVendors}
                 handleOpenVendorsClick = {handleOpenVendorsClick}
 
@@ -248,6 +256,8 @@ export default function AppBarElement() {
 
                 openBrands = {openBrands}
                 handleOpenBrandsClick = {handleOpenBrandsClick}
+
+                
             />
         </>
     );
