@@ -1,4 +1,7 @@
 import * as React from 'react';
+
+import { Link } from 'react-router-dom';
+
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -16,14 +19,24 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+
 import { Badge, alpha } from '@mui/material';
+
+import ListItemIcon from '@mui/material/ListItemIcon';
+import Collapse from '@mui/material/Collapse';
+import StarBorder from '@mui/icons-material/StarBorder';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import CloseIcon from '@mui/icons-material/Close';
+
 import {
-   Groups, Dashboard, GridView, ProductionQuantityLimits,
+  Groups, Dashboard, GridView, ProductionQuantityLimits,
   Category, ShoppingCart, Reviews, BrandingWatermark, Apps, Security
 } from '@mui/icons-material';
+
 import { InputBase } from '@mui/material'
 import { Stack } from '@mui/system';
 import { grey } from '@mui/material/colors';
+import "./index.css";
 
 const drawerWidth = 240;
 
@@ -156,6 +169,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 
 export default function Sidebar(props) {
   const theme = useTheme();
+
   // const [open, setOpen] = React.useState(false);
 
   // const handleDrawerOpen = () => {
@@ -166,6 +180,66 @@ export default function Sidebar(props) {
   //   setOpen(false);
   // };
 
+  const sideBarListArray = [
+    {
+      "title": "DASHBOARD",
+      "url": "/dashboard",
+      "component": GridView
+    },
+    {
+      "title": "VENDORS",
+      "url": "/vendors",
+      "component": Groups
+    },
+    {
+      "title": "USERS",
+      "url": "/users",
+      "component": Groups
+    },
+    {
+      "title": "CATEGORIES",
+      "url": "/categories",
+      "component": Category
+    },
+    {
+      "title": "PRODUCTS",
+      "url": "/products",
+      "component": ProductionQuantityLimits
+    },
+    {
+      "title": "ORDERS",
+      "url": "/orders",
+      "component": ShoppingCart
+    },
+    {
+      "title": "REVIEWS",
+      "url": "/reviews",
+      "component": Reviews
+    },
+    {
+      "title": "BRANDS",
+      "url": "/brands",
+      "component": BrandingWatermark
+    },
+
+    // {
+    //   "title": "AUTHENTICATION",
+    //   "url": "/brands",
+    //   "component": Security
+    // },
+    // {
+    //   "title": "ICONS",
+    //   "url": "/brands",
+    //   "component": Apps
+    // },
+    // {
+    //   "title": "OTHER PAGES",
+    //   "url": "/brands",
+    //   "component": Dashboard
+    // },
+  ];
+
+  console.log("props", { props });
   return (
     <>
       <Drawer variant="permanent" open={props.open}>
@@ -176,108 +250,332 @@ export default function Sidebar(props) {
         </DrawerHeader>
         <Divider />
         <List>
-          {['DASHBOARD'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: props.open ? 'initial' : 'center',
-                  px: 2.5,
-                  color: grey[500],
-                }}>
-                <GridView
-                  sx={{
-                    minWidth: 0,
-                    mr: props.open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </GridView>
-                <ListItemText primary={text} sx={{ opacity: props.open ? 1 : 0, color: grey[600], fontFamily: 'fantasy' }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-          <List>
-            {['VENDORS', 'USERS'].map((text, index) => (
-              <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-                <ListItemButton
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: props.open ? 'initial' : 'center',
-                    px: 2.5,
-                  }}>
-                  <Groups
-                    sx={{
-                      minWidth: 0,
-                      mr: props.open ? 3 : 'auto',
-                      justifyContent: 'center',
-                      color: grey[500],
-                    }}>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </Groups>
-                  <ListItemText primary={text} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
-                </ListItemButton>
+          {sideBarListArray.map((value, index) => {
+            return (
+              <ListItem key={value.index} disablePadding sx={{ display: 'block' }}>
+
+
+                {/* VENDORS,USERS,CATEGORIES,PRODUCTS,ORDERS,REVIEWS,BRANDS */}
+
+                {/* handleOpenVendorsClick, handleOpenUsersClick, handleOpenCategoriesClick
+                handleOpenProductsClick, handleOpenOrdersClick, handleOpenReviewsClick, 
+                handleOpenBrandsClick */}
+
+                {
+                  value.title === 'DASHBOARD' ? <>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: props.open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                    >
+                      <value.component
+                        sx={{
+                          minWidth: 0,
+                          mr: props.open ? 3 : 'auto',
+                          justifyContent: 'center',
+                          color: grey[500],
+                        }}>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </value.component>
+                      <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
+                    </ListItemButton>
+                  </> : ""
+                }
+
+                {
+                  value.title === 'VENDORS' ? <>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: props.open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                      onClick={props.handleOpenVendorsClick}
+                    >
+                      <value.component
+                        sx={{
+                          minWidth: 0,
+                          mr: props.open ? 3 : 'auto',
+                          justifyContent: 'center',
+                          color: grey[500],
+                        }}>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </value.component>
+                      <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
+
+                      {/* {props.openVendors ? (
+                        <CloseIcon style={{ width: "32px" }} />
+                      ) : (
+                        <KeyboardArrowDownIcon />
+                      )} */}
+                    </ListItemButton>
+
+                    {props.openVendors ? <Collapse in={props.handleOpenVendorsClick} timeout="auto" unmountOnExit>
+                      <List component="div" disablePadding>
+                        <Link to={value.url} className="sidebar_links">
+                          <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                              <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="View Vendors" />
+                          </ListItemButton>
+                        </Link>
+                      </List>
+                    </Collapse> : ""}
+
+                  </> : ""
+                }
+
+                {
+                  value.title === 'USERS' ? <>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: props.open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                      onClick={props.handleOpenUsersClick}
+                    >
+                      <value.component
+                        sx={{
+                          minWidth: 0,
+                          mr: props.open ? 3 : 'auto',
+                          justifyContent: 'center',
+                          color: grey[500],
+                        }}>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </value.component>
+                      <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
+
+                      {/* {props.openUsers ? (
+                        <CloseIcon style={{ width: "32px" }} />
+                      ) : (
+                        <KeyboardArrowDownIcon />
+                      )} */}
+                    </ListItemButton>
+
+                    {props.openUsers ? <Collapse in={props.handleOpenUsersClick} timeout="auto" unmountOnExit>
+                      <List component="div" disablePadding>
+                        <Link to={value.url} className="sidebar_links">
+                          <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                              <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="View Users" />
+                          </ListItemButton>
+                        </Link>
+                      </List>
+                    </Collapse> : ""}
+
+                  </> : ""
+                }
+
+                {
+                  value.title === 'CATEGORIES' ? <>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: props.open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                      onClick={props.handleOpenCategoriesClick}
+                    >
+                      <value.component
+                        sx={{
+                          minWidth: 0,
+                          mr: props.open ? 3 : 'auto',
+                          justifyContent: 'center',
+                          color: grey[500],
+                        }}>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </value.component>
+                      <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
+
+                      {/* {props.openCategories ? (
+                        <CloseIcon style={{ width: "32px" }} />
+                      ) : (
+                        <KeyboardArrowDownIcon />
+                      )} */}
+                    </ListItemButton>
+
+                    {props.openCategories ? <Collapse in={props.handleOpenCategoriesClick} timeout="auto" unmountOnExit>
+                      <List component="div" disablePadding>
+                        <Link to={value.url} className="sidebar_links">
+                          <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                              <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="View Categories" />
+                          </ListItemButton>
+                        </Link>
+                      </List>
+                    </Collapse> : ""}
+
+                  </> : ""
+                }
+
+                {
+                  value.title === 'PRODUCTS' ? <>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: props.open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                      onClick={props.handleOpenProductsClick}
+                    >
+                      <value.component
+                        sx={{
+                          minWidth: 0,
+                          mr: props.open ? 3 : 'auto',
+                          justifyContent: 'center',
+                          color: grey[500],
+                        }}>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </value.component>
+                      <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
+                    </ListItemButton>
+
+                    {props.openProducts ? <Collapse in={props.handleOpenProductsClick} timeout="auto" unmountOnExit>
+                      <List component="div" disablePadding>
+                        <Link to={value.url} className="sidebar_links">
+                          <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                              <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="View Products" />
+                          </ListItemButton>
+                        </Link>
+                      </List>
+                    </Collapse> : ""}
+
+                  </> : ""
+                }
+
+                {
+                  value.title === 'ORDERS' ? <>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: props.open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                      onClick={props.handleOpenOrdersClick}
+                    >
+                      <value.component
+                        sx={{
+                          minWidth: 0,
+                          mr: props.open ? 3 : 'auto',
+                          justifyContent: 'center',
+                          color: grey[500],
+                        }}>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </value.component>
+                      <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
+                    </ListItemButton>
+
+                    {props.openOrders ? <Collapse in={props.handleOpenOrdersClick} timeout="auto" unmountOnExit>
+                      <List component="div" disablePadding>
+                        <Link to={value.url} className="sidebar_links">
+                          <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                              <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="View Orders" />
+                          </ListItemButton>
+                        </Link>
+                      </List>
+                    </Collapse> : ""}
+
+                  </> : ""
+                }
+
+                {
+                  value.title === 'REVIEWS' ? <>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: props.open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                      onClick={props.handleOpenReviewsClick}
+                    >
+                      <value.component
+                        sx={{
+                          minWidth: 0,
+                          mr: props.open ? 3 : 'auto',
+                          justifyContent: 'center',
+                          color: grey[500],
+                        }}>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </value.component>
+                      <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
+                    </ListItemButton>
+
+                    {props.openReviews ? <Collapse in={props.handleOpenReviewsClick} timeout="auto" unmountOnExit>
+                      <List component="div" disablePadding>
+                        <Link to={value.url} className="sidebar_links">
+                          <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                              <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="View Reviews" />
+                          </ListItemButton>
+                        </Link>
+                      </List>
+                    </Collapse> : ""}
+
+                  </> : ""
+                }
+
+                {   
+                  value.title === 'BRANDS' ? <>
+                    <ListItemButton
+                      sx={{
+                        minHeight: 48,
+                        justifyContent: props.open ? 'initial' : 'center',
+                        px: 2.5,
+                      }}
+                      onClick={props.handleOpenBrandsClick}
+                    >
+                      <value.component
+                        sx={{
+                          minWidth: 0,
+                          mr: props.open ? 3 : 'auto',
+                          justifyContent: 'center',
+                          color: grey[500],
+                        }}>
+                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </value.component>
+                      <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
+                    </ListItemButton>
+
+                    {props.openBrands ? <Collapse in={props.handleOpenBrandsClick} timeout="auto" unmountOnExit>
+                      <List component="div" disablePadding>
+                        <Link to={value.url} className="sidebar_links">
+                          <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                              <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="View Brands" />
+                          </ListItemButton>
+                        </Link>
+                      </List>
+                    </Collapse> : ""}
+
+                  </> : ""
+                }
+                 
+
+                {/* VENDORS,USERS,CATEGORIES,PRODUCTS,ORDERS,REVIEWS,BRANDS */}
+                {/* users  */}
               </ListItem>
-            ))}
-          </List>
-        <Divider />
-          <List>
-            {['CATEGORIES', 'PRODUCTS', 'ORDERS', 'REVIEWS', 'BRANDS'].map((text, index) => {
-              let components = [Category, ProductionQuantityLimits, ShoppingCart, Reviews, BrandingWatermark];
-              let Component = components[index];
-              return (
-                <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-                  <ListItemButton
-                    sx={{
-                      minHeight: 48,
-                      justifyContent: props.open ? 'initial' : 'center',
-                      px: 2.5,
-                    }}>
-                    <Component
-                      sx={{
-                        minWidth: 0,
-                        mr: props.open ? 3 : 'auto',
-                        justifyContent: 'center',
-                        color: grey[500],
-                      }}>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </Component>
-                    <ListItemText primary={text} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
-                  </ListItemButton>
-                </ListItem>
-              )
-            })}
-          </List>
-        <Divider />
-          <List>
-            {['AUTHENTICATION', 'ICONS', 'OTHER PAGES'].map((text, index) => {
-              let components = [Security, Apps, Dashboard];
-              let Component = components[index];
-              return (
-                <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-                  <ListItemButton
-                    sx={{
-                      minHeight: 48,
-                      justifyContent: props.open ? 'initial' : 'center',
-                      px: 2.5,
-                    }} >
-                    <Component
-                      sx={{
-                        minWidth: 0,
-                        mr: props.open ? 3 : 'auto',
-                        justifyContent: 'center',
-                        color: grey[500],
-                      }} >
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </Component>
-                    <ListItemText primary={text} sx={{ opacity: props.open ? 1 : 0, color: grey[600], fontFamily: 'monospace' }} />
-                  </ListItemButton>
-                </ListItem>
-              )
-            })}
-          </List>
+
+            )
+          })}
+        </List>
       </Drawer>
     </>
   );
