@@ -5,7 +5,7 @@ import "./index.css";
 import DashboardTopAnalytics from "../../components/topanalytics";
 import SalesReportChart from "../../components/salesreport";
 import { Box, Grid } from "@mui/material";
-import SalesOrdersChart from "../../components/chartSalesOrders";
+import SalesOrdersChart from "../../components/chart/chartSalesOrders";
 
 import AppBarElement from "../../components/appbar";
 

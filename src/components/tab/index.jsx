@@ -4,9 +4,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import DailySalesChart from "../chartDailySales";
-import MonthlySalesChart from "../chartMonthlySales";
-import YearlySalesChart from "../chartYearlySales";
+import DailySalesChart from "../chart/chartDailySales";
+import MonthlySalesChart from "../chart/chartMonthlySales";
+import YearlySalesChart from "../chart/chartYearlySales";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
