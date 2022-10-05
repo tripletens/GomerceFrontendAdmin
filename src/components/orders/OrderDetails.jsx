@@ -1,4 +1,4 @@
-import "./ekka.css";
+import "./styles.css";
 import "./index.scss";
 import {
   Box,
@@ -54,7 +54,7 @@ export const OrderDetails = () => {
 
   return (
     <>
-      <Box className="ec-content-wrapper">
+      <Box className="content-wrapper">
         <div className="content">
           {/* <div className="breadcrumb-wrapper breadcrumb-wrapper-2">
             <h1>Order Detail</h1>
