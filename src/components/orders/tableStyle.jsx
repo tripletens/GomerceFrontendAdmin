@@ -5,6 +5,10 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.primary.dark,
     color: theme.palette.common.white,
+    "&:hover": {
+      color: theme.palette.secondary.main,
+      cursor: "pointer",
+    },
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,

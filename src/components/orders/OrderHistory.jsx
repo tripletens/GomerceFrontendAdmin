@@ -91,7 +91,7 @@ const headCells = [
   { id: "action", label: "Action", disableSorting: true },
 ];
 
-export const NewOrders = () => {
+export const OrderHistory = () => {
   // const [page, setPage] = useState(0);
   // const [rowsPerPage, setRowsPerPage] = useState(5);
   // const [lastPage, setLastPage] = useState(0);

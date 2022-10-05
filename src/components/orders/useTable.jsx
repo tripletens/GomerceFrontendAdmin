@@ -7,7 +7,7 @@ import {
   TableSortLabel,
   TableContainer,
 } from "@mui/material";
-import { Box, IconButton, Paper } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import FirstPageIcon from "@mui/icons-material/FirstPage";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
@@ -61,9 +61,18 @@ export default function useTable(records, headCells, filterFn) {
           {headCells.map((headCell) => (
             <StyledTableCell
               key={headCell.id}
-              sortDirection={orderBy === headCell.id ? order : false}
+              // sortDirection={orderBy === headCell.id ? order : false}
             >
-              {headCell.disableSorting ? (
+              <TableSortLabel
+                active={orderBy === headCell.id}
+                direction={orderBy === headCell.id ? order : "asc"}
+                onClick={() => {
+                  handleSortRequest(headCell.id);
+                }}
+              >
+                {headCell.label}
+              </TableSortLabel>
+              {/* {headCell.disableSorting ? (
                 headCell.label
               ) : (
                 <TableSortLabel
@@ -75,7 +84,7 @@ export default function useTable(records, headCells, filterFn) {
                 >
                   {headCell.label}
                 </TableSortLabel>
-              )}
+              )} */}
             </StyledTableCell>
           ))}
         </StyledTableRow>
