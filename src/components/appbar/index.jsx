@@ -256,8 +256,6 @@ export default function AppBarElement() {
 
                 openBrands = {openBrands}
                 handleOpenBrandsClick = {handleOpenBrandsClick}
-
-                
             />
         </>
     );
