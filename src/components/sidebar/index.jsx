@@ -263,24 +263,26 @@ export default function Sidebar(props) {
 
                 {
                   value.title === 'DASHBOARD' ? <>
-                    <ListItemButton
-                      sx={{
-                        minHeight: 48,
-                        justifyContent: props.open ? 'initial' : 'center',
-                        px: 2.5,
-                      }}
-                    >
-                      <value.component
+                    <Link to={value.url} className="sidebar_links">
+                      <ListItemButton
                         sx={{
-                          minWidth: 0,
-                          mr: props.open ? 3 : 'auto',
-                          justifyContent: 'center',
-                          color: grey[500],
-                        }}>
-                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                      </value.component>
-                      <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
-                    </ListItemButton>
+                          minHeight: 48,
+                          justifyContent: props.open ? 'initial' : 'center',
+                          px: 2.5,
+                        }}
+                      >
+                        <value.component
+                          sx={{
+                            minWidth: 0,
+                            mr: props.open ? 3 : 'auto',
+                            justifyContent: 'center',
+                            color: grey[500],
+                          }}>
+                          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                        </value.component>
+                        <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
+                      </ListItemButton>
+                    </Link>
                   </> : ""
                 }
 
@@ -530,7 +532,7 @@ export default function Sidebar(props) {
                   </> : ""
                 }
 
-                {   
+                {
                   value.title === 'BRANDS' ? <>
                     <ListItemButton
                       sx={{
@@ -567,7 +569,7 @@ export default function Sidebar(props) {
 
                   </> : ""
                 }
-                 
+
 
                 {/* VENDORS,USERS,CATEGORIES,PRODUCTS,ORDERS,REVIEWS,BRANDS */}
                 {/* users  */}
