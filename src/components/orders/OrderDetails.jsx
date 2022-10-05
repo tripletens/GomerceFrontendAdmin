@@ -54,7 +54,7 @@ export const OrderDetails = () => {
 
   return (
     <>
-      <Box className="content-wrapper">
+      <Box className="ec-content-wrapper">
         <div className="content">
           {/* <div className="breadcrumb-wrapper breadcrumb-wrapper-2">
             <h1>Order Detail</h1>
