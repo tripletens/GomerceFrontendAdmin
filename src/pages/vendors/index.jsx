@@ -7,6 +7,8 @@ import { Box } from "@mui/system";
 import AppBarElement from "../../components/appbar";
 import Vendor from "../../components/vendor/Vendor";
 import DashboardHeader from "../../components/dashboardHeader";
+import AddItemVendor from "../../components/vendor/AddItem";
+import { Stack } from "@mui/material";
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -25,7 +27,15 @@ const Vendors = () => {
         <AppBarElement />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <DrawerHeader />
-          <DashboardHeader />
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            margin="30px 0"
+          >
+            <DashboardHeader page="Vendors" title="Vendors Card" />
+            <AddItemVendor />
+          </Stack>
           <Vendor />
         </Box>
       </Box>
