@@ -1,10 +1,15 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import check from '../../assets/Checkmark.svg';
 
 const FormHeader = () => {
+	let { done } = useParams();
 	return (
 		<div className='form-header'>
 			<div className='form-title'>
-				<span className='form-name'>1. Address details</span>
+				<span className='form-name'>
+					{done === 'true' ? <img src={check} alt='' /> : 1} Address details
+				</span>
 				<div className='continuation'></div>
 			</div>
 			<div className='form-title'>

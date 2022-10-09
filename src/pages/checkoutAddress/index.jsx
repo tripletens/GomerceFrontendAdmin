@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import CategoriesLayout from '../../components/categoriesLayout';
 import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import './index.css';
 import { useNavigate } from 'react-router-dom';
+import styled from '@emotion/styled';
+
+export const CustomSelect = styled(Select)`
+	padding: 0 8px;
+	${'' /* background: lightBlue */}
+	border-radius: 4px;
+	width: 100%;
+	max-height: 40px;
+`;
 
 const CheckoutAddress = () => {
 	const [paymentOption, setPaymentOption] = useState('');
@@ -33,22 +41,20 @@ const CheckoutAddress = () => {
 						<label htmlFor=''>Mobile number</label>
 						<div className='mobile-input'>
 							<Box sx={{ maxWidth: '141px', flex: '1 1 0%' }}>
-								<FormControl fullWidth>
-									<Select
-										labelId='demo-simple-select-label'
-										id='demo-simple-select'
-										value={paymentOption}
-										onChange={handleChange}
-										placeholder='open this select'
-										defaultValue='open this select'
-									>
-										<MenuItem disabled value={'open this select'}>
-											open this select
-										</MenuItem>
-										<MenuItem value={'cash'}>Cash</MenuItem>
-										<MenuItem value={'card'}>Card</MenuItem>
-									</Select>
-								</FormControl>
+								<CustomSelect
+									labelId='demo-simple-select-label'
+									id='demo-simple-select'
+									value={paymentOption}
+									onChange={handleChange}
+									placeholder='open this select'
+									defaultValue='open this select'
+								>
+									<MenuItem disabled value={'open this select'}>
+										open this select
+									</MenuItem>
+									<MenuItem value={'cash'}>Cash</MenuItem>
+									<MenuItem value={'card'}>Card</MenuItem>
+								</CustomSelect>
 							</Box>
 							<input type='text' />
 						</div>
@@ -64,49 +70,45 @@ const CheckoutAddress = () => {
 					<div className='address-input'>
 						<label htmlFor=''>Region/State</label>
 						<Box sx={{ maxWidth: '450px', flex: '1 1 0%' }}>
-							<FormControl fullWidth>
-								<Select
-									labelId='demo-simple-select-label'
-									id='demo-simple-select'
-									value={paymentOption}
-									onChange={handleChange}
-									placeholder='open this select'
-									defaultValue='open this select'
-								>
-									<MenuItem disabled value={'open this select'}>
-										open this select
-									</MenuItem>
-									<MenuItem value={'cash'}>Cash</MenuItem>
-									<MenuItem value={'card'}>Card</MenuItem>
-								</Select>
-							</FormControl>
+							<CustomSelect
+								labelId='demo-simple-select-label'
+								id='demo-simple-select'
+								value={paymentOption}
+								onChange={handleChange}
+								placeholder='open this select'
+								defaultValue='open this select'
+							>
+								<MenuItem disabled value={'open this select'}>
+									open this select
+								</MenuItem>
+								<MenuItem value={'cash'}>Cash</MenuItem>
+								<MenuItem value={'card'}>Card</MenuItem>
+							</CustomSelect>
 						</Box>
 					</div>
 					<div className='address-input'>
 						<label htmlFor=''>City</label>
 						<Box sx={{ maxWidth: '450px', flex: '1 1 0%' }}>
-							<FormControl fullWidth>
-								<Select
-									labelId='demo-simple-select-label'
-									id='demo-simple-select'
-									value={paymentOption}
-									onChange={handleChange}
-									placeholder='open this select'
-									defaultValue='open this select'
-								>
-									<MenuItem disabled value={'open this select'}>
-										open this select
-									</MenuItem>
-									<MenuItem value={'cash'}>Cash</MenuItem>
-									<MenuItem value={'card'}>Card</MenuItem>
-								</Select>
-							</FormControl>
+							<CustomSelect
+								labelId='demo-simple-select-label'
+								id='demo-simple-select'
+								value={paymentOption}
+								onChange={handleChange}
+								placeholder='open this select'
+								defaultValue='open this select'
+							>
+								<MenuItem disabled value={'open this select'}>
+									open this select
+								</MenuItem>
+								<MenuItem value={'cash'}>Cash</MenuItem>
+								<MenuItem value={'card'}>Card</MenuItem>
+							</CustomSelect>
 						</Box>
 					</div>
 				</div>
 			</div>
 			<button
-				onClick={() => navigate('/checkout-delivery')}
+				onClick={() => navigate('/checkout-delivery?done=true')}
 				className='payment-form-action'
 			>
 				SAVE AND CONTINUE
