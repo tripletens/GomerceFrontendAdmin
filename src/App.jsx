@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
 import Vendors from "./pages/vendors";
-import Users from "./pages/users";
 import { Categories } from './pages/categories';
 import { Orders } from "./pages/orders";
 import { Users } from "./pages/users";
