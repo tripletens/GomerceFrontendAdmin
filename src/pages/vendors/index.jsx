@@ -1,7 +1,5 @@
-
 import React from "react";
-import { styled, useTheme } from '@mui/material/styles';
-// welcome to admin dashboard
+import { styled } from '@mui/material/styles';
 import "./index.css";
 import { Box } from "@mui/system";
 import AppBarElement from "../../components/appbar";
@@ -9,6 +7,7 @@ import Vendor from "../../components/vendor/Vendor";
 import DashboardHeader from "../../components/dashboardHeader";
 import AddItemVendor from "../../components/vendor/AddItem";
 import { Stack } from "@mui/material";
+
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -20,7 +19,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 const Vendors = () => {
-
   return (
     <>
       <Box sx={{ display: 'flex' }}>
@@ -31,12 +29,15 @@ const Vendors = () => {
             direction="row"
             justifyContent="space-between"
             alignItems="center"
-            margin="30px 0"
-          >
+            margin="30px 0" >
             <DashboardHeader page="Vendors" title="Vendors Card" />
             <AddItemVendor />
           </Stack>
-          <Vendor />
+           <Vendor />  
+           
+           {/* { show &&  <ViewOneVendor />  }  */}
+          
+           {/* <Vendor /> { open && <ViewOneVendor /> } */}
         </Box>
       </Box>
     </>

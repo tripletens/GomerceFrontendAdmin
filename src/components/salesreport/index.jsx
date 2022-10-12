@@ -1,7 +1,5 @@
 import React from "react";
 import "./index.css";
-import { Box, Grid } from "@mui/material";
-import Chart from "react-apexcharts";
 import BasicTab from "../tab";
 
 const SalesReportChart = () => {

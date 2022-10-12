@@ -7,7 +7,7 @@ function DashboardHeader(props) {
   return (
     <>
       <Stack direction="column">
-        <Typography variant="h6">{props.title}</Typography>
+        <Typography variant="h5" sx={{fontWeight: 'bold', color:'#757575'}}>{props.title}</Typography>
         <Stack direction="row" alignItems="center">
           <Typography href="#" textDecoration="none">
             Home

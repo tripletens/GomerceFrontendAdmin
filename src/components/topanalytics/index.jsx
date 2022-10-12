@@ -16,7 +16,7 @@ const DashboardTopAnalytics = () => {
               <p>Daily Signups</p>
             </div>
             <div className="dashboard_top_info_box_right">
-              <img src="https://img.icons8.com/glyph-neue/32/000000/login-rounded-right.png" />
+              <img alt="icon1" src="https://img.icons8.com/glyph-neue/32/000000/login-rounded-right.png" />
             </div>
           </div>
         </Grid>
@@ -27,7 +27,7 @@ const DashboardTopAnalytics = () => {
               <p>Daily Visitors</p>
             </div>
             <div className="dashboard_top_info_box_right">
-              <img src={users_icon} />
+              <img alt="icon2" src={users_icon} />
             </div>
           </div>
         </Grid>
@@ -38,7 +38,7 @@ const DashboardTopAnalytics = () => {
               <p>Daily Orders</p>
             </div>
             <div className="dashboard_top_info_box_right">
-              <img src={orders_icon} />
+              <img alt="icon3" src={orders_icon} />
             </div>
           </div>
         </Grid>
@@ -49,7 +49,7 @@ const DashboardTopAnalytics = () => {
               <p>Daily Revenue</p>
             </div>
             <div className="dashboard_top_info_box_right">
-              <img src={revenue_icon} />
+              <img alt="icon4" src={revenue_icon} />
             </div>
           </div>
         </Grid>
