@@ -41,7 +41,7 @@ const BootstrapButton = styled(Button)({
 });
 
 
-const AddItemVendor = () => {
+const AddItemUser = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -49,7 +49,7 @@ const AddItemVendor = () => {
         onClick={(e) => setOpen(true)}
         variant="contained"
         startIcon={<AddIcon />} size="medium">
-        Add Vendor
+        Add User
       </BootstrapButton>
 
       <SytledModal
@@ -68,7 +68,7 @@ const AddItemVendor = () => {
           borderRadius={5}
         >
           <Typography variant="h6" color="gray" textAlign="center">
-            Add Seller
+            Add User
           </Typography>
           <UserBox>
             <Avatar
@@ -108,4 +108,4 @@ const AddItemVendor = () => {
   );
 };
 
-export default AddItemVendor;
+export default AddItemUser;

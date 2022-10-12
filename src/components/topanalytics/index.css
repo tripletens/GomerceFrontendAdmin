@@ -12,6 +12,7 @@
     padding: 10px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-top: 20px;
     
 }
 
@@ -24,6 +25,7 @@
 
 .dashboard_top_info_box_left h3{
     margin-bottom: 5px;
+    color: #F4F5EF;
 }
 
 .dashboard_top_info_box_left p{

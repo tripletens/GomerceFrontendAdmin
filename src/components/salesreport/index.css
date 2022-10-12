@@ -3,12 +3,13 @@
     height: auto;
     width: 100%;
     width: auto;
-    margin-left: 50px;
+    margin-left: 20px;
+    margin-top: 50px;
     margin-right: 20px;
     background-color: #F4F5EF;
     box-shadow: 0px 4px 50px rgba(232, 232, 232, 0.8) !important;
     border-radius: 8px;
-    padding: 30px;
+    padding: 20px;
 }
 
 .sales_report_header{
