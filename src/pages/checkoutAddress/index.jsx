@@ -108,7 +108,7 @@ const CheckoutAddress = () => {
 				</div>
 			</div>
 			<button
-				onClick={() => navigate('/checkout-delivery?done=true')}
+				onClick={() => navigate('/checkout-delivery?checkout-address=done')}
 				className='payment-form-action'
 			>
 				SAVE AND CONTINUE

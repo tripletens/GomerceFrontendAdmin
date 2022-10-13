@@ -13,7 +13,7 @@ const CheckoutDelivery = () => {
 			<ShippingSummary />
 
 			<button
-				onClick={() => navigate('/checkout-payment')}
+				onClick={() => navigate('/checkout-payment?checkout-delivery=done')}
 				className='form-action'
 			>
 				SAVE AND CONTINUE
