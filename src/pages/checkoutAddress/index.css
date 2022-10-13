@@ -1,0 +1,72 @@
+.address-container {
+	padding: 18px;
+}
+
+.address-container > h5 {
+	font-weight: 400;
+}
+
+.address-form {
+	padding: 10px;
+	margin-top: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.address-input {
+	flex: 1 1 0%;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+.address-input > input {
+	max-width: 256px;
+	width: 100%;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	height: 38px;
+}
+
+.address-name-form {
+	display: flex;
+	max-width: 582px;
+	width: 100%;
+	gap: 50px;
+}
+
+.mobile-form {
+	/* flex: 1 1 0%; */
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.mobile-input {
+	/* flex: 1 1 0%; */
+	max-width: 450px;
+	width: 100%;
+	display: flex;
+	gap: 18px;
+	align-items: center;
+}
+.mobile-input > input {
+	max-width: 256px;
+	width: 100%;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	height: 38px;
+}
+
+.address-textarea {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+.address-textarea > textarea {
+	width: 538px;
+	height: 84px;
+	resize: none;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+}

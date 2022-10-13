@@ -1,0 +1,65 @@
+.payment-container {
+	padding: 18px;
+}
+.payment-container > h5 {
+	font-weight: 400;
+}
+.payment-form {
+	margin-top: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+	padding: 10px;
+}
+
+.input-container {
+	margin-top: 20px;
+	display: flex;
+	gap: 10px;
+}
+
+.input-form {
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	max-width: 256px;
+	width: 100%;
+}
+
+.voucher-btn {
+	background: #f4f5ef;
+	border: 1px solid #f4f5ef;
+	border-radius: 4px;
+	text-transform: uppercase;
+}
+
+.payment-pricing {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	margin-top: 20px;
+	padding-top: 30px;
+	padding-left: 14px;
+	padding-right: 30px;
+	border-top: 1px solid #ced4da;
+}
+
+.payment-divider {
+	height: 1px;
+	width: 100%;
+	background-color: #ced4da;
+	margin-bottom: 24px;
+}
+
+.payment-breakdown {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.payment-form-action {
+	background: #1f2839;
+	border: 1px solid #1f2839;
+	border-radius: 4px;
+	color: #ffffff;
+	margin-top: 10px;
+}
