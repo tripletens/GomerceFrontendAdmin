@@ -1,6 +1,7 @@
 import React from 'react';
 import FormHeader from '../CheckoutForm/FormHeader';
 import OrderSummary from '../orderSummary';
+import './index.css';
 
 const CategoriesLayout = ({ children }) => {
 	return (
