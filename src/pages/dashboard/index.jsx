@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 // welcome to admin dashboard
 import "./index.css";
 import DashboardTopAnalytics from "../../components/topanalytics";

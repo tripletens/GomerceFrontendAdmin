@@ -1,8 +1,8 @@
 import "./index.scss";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from "@mui/material/TableCell";
-import TableRow from "@mui/material/TableRow";
+// import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+// import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import {
   Button,
@@ -15,7 +15,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Box, Stack } from "@mui/system";
 import { useState } from "react";
 import useTable from "./useTable";
-import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
 import { StyledTableCell, StyledTableRow } from "./tableStyle";
 
 const rows = [
@@ -104,7 +104,7 @@ export const NewOrders = () => {
       return items;
     },
   });
-
+  setRecords(rows);
   const {
     TblContainer,
     TblHead,

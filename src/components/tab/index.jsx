@@ -74,9 +74,9 @@ export default function BasicTab(props) {
               <>
                 <TabPanel value={value} index={key}>
                     {item.title}
-                  {item.title.toLowerCase() == 'today' ? <> <DailySalesChart/> </> : "" }
-                  {item.title.toLowerCase() == 'monthly' ? <> <MonthlySalesChart/> </> : "" }
-                  {item.title.toLowerCase() == 'yearly' ? <> <YearlySalesChart/> </> : "" }
+                  {item.title.toLowerCase() === 'today' ? <> <DailySalesChart/> </> : "" }
+                  {item.title.toLowerCase() === 'monthly' ? <> <MonthlySalesChart/> </> : "" }
+                  {item.title.toLowerCase() === 'yearly' ? <> <YearlySalesChart/> </> : "" }
 
                 </TabPanel>
               </>
