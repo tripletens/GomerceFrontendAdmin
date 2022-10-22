@@ -5,7 +5,6 @@ import store from '../../my_db'
 import {Grid} from '@mui/material';
 import './post.css'
 
-
 const Vendor = () => {
   return (
       <Box className='vendor-card'>
