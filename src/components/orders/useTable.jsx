@@ -7,7 +7,7 @@ import {
   TableSortLabel,
   TableContainer,
 } from "@mui/material";
-import { Box, IconButton, Paper } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import FirstPageIcon from "@mui/icons-material/FirstPage";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";

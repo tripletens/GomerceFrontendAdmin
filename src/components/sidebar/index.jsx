@@ -1,17 +1,13 @@
 import * as React from 'react';
-
 import { Link } from 'react-router-dom';
-
+import { sideBarListArray } from '../../sidebarData'
 import { styled, useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-import MuiAppBar from '@mui/material/AppBar';
+// import MuiAppBar from '@mui/material/AppBar';
 import List from '@mui/material/List';
-import CssBaseline from '@mui/material/CssBaseline';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
@@ -19,22 +15,12 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
-import { Badge, alpha } from '@mui/material';
-
+// import { alpha } from '@mui/material';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Collapse from '@mui/material/Collapse';
 import StarBorder from '@mui/icons-material/StarBorder';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import CloseIcon from '@mui/icons-material/Close';
-
-import {
-  Groups, Dashboard, GridView, ProductionQuantityLimits,
-  Category, ShoppingCart, Reviews, BrandingWatermark, Apps, Security
-} from '@mui/icons-material';
-
-import { InputBase } from '@mui/material'
-import { Stack } from '@mui/system';
+import {Person2, ManageAccounts} from '@mui/icons-material';
+// import { InputBase } from '@mui/material'
 import { grey } from '@mui/material/colors';
 import "./index.css";
 
@@ -70,25 +56,25 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  backgroundColor: theme.palette.common.white,
-  color: 'black',
-  transition: theme.transitions.create(['width', 'margin'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
+// const AppBar = styled(MuiAppBar, {
+//   shouldForwardProp: (prop) => prop !== 'open',
+// })(({ theme, open }) => ({
+//   zIndex: theme.zIndex.drawer + 1,
+//   backgroundColor: theme.palette.common.white,
+//   color: 'black',
+//   transition: theme.transitions.create(['width', 'margin'], {
+//     easing: theme.transitions.easing.sharp,
+//     duration: theme.transitions.duration.leavingScreen,
+//   }),
+//   ...(open && {
+//     marginLeft: drawerWidth,
+//     width: `calc(100% - ${drawerWidth}px)`,
+//     transition: theme.transitions.create(['width', 'margin'], {
+//       easing: theme.transitions.easing.sharp,
+//       duration: theme.transitions.duration.enteringScreen,
+//     }),
+//   }),
+// }));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -107,65 +93,65 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const Search = styled('div')(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  borderRadius: '20px',
-  backgroundColor: alpha(theme.palette.common.black, 0.05),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.black, 0.03),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto',
-  },
-}));
+// const Search = styled('div')(({ theme }) => ({
+//   display: 'flex',
+//   justifyContent: 'space-around',
+//   alignItems: 'center',
+//   borderRadius: '20px',
+//   backgroundColor: alpha(theme.palette.common.black, 0.05),
+//   '&:hover': {
+//     backgroundColor: alpha(theme.palette.common.black, 0.03),
+//   },
+//   marginRight: theme.spacing(2),
+//   marginLeft: 0,
+//   width: '100%',
+//   [theme.breakpoints.up('sm')]: {
+//     marginLeft: theme.spacing(3),
+//     width: 'auto',
+//   },
+// }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  color: '#757172',
-  height: '100%',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-}));
+// const SearchIconWrapper = styled('div')(({ theme }) => ({
+//   padding: theme.spacing(0, 2),
+//   color: '#757172',
+//   height: '100%',
+//   pointerEvents: 'none',
+//   display: 'flex',
+//   alignItems: 'center',
+//   justifyContent: 'flex-end',
+// }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: '#928d8e',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '40ch',
-    },
-  },
-}));
+// const StyledInputBase = styled(InputBase)(({ theme }) => ({
+//   color: '#928d8e',
+//   '& .MuiInputBase-input': {
+//     padding: theme.spacing(1, 1, 1, 0),
+//     // vertical padding + font size from searchIcon
+//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+//     transition: theme.transitions.create('width'),
+//     width: '100%',
+//     [theme.breakpoints.up('md')]: {
+//       width: '40ch',
+//     },
+//   },
+// }));
 
-const Icons = styled(Box)(({ theme }) => ({
-  display: 'none',
-  gap: '20px',
-  alignItems: 'center',
-  [theme.breakpoints.up("sm")]: {
-    display: 'flex'
-  }
-}));
+// const Icons = styled(Box)(({ theme }) => ({
+//   display: 'none',
+//   gap: '20px',
+//   alignItems: 'center',
+//   [theme.breakpoints.up("sm")]: {
+//     display: 'flex'
+//   }
+// }));
 
-const UserBox = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  gap: '10px',
-  alignItems: 'center',
-  [theme.breakpoints.up("sm")]: {
-    display: 'none'
-  }
-}));
+// const UserBox = styled(Box)(({ theme }) => ({
+//   display: 'flex',
+//   gap: '10px',
+//   alignItems: 'center',
+//   [theme.breakpoints.up("sm")]: {
+//     display: 'none'
+//   }
+// }));
 
 export default function Sidebar(props) {
   const theme = useTheme();
@@ -180,66 +166,8 @@ export default function Sidebar(props) {
   //   setOpen(false);
   // };
 
-  const sideBarListArray = [
-    {
-      "title": "DASHBOARD",
-      "url": "/dashboard",
-      "component": GridView
-    },
-    {
-      "title": "VENDORS",
-      "url": "/vendors",
-      "component": Groups
-    },
-    {
-      "title": "USERS",
-      "url": "/users",
-      "component": Groups
-    },
-    {
-      "title": "CATEGORIES",
-      "url": "/categories",
-      "component": Category
-    },
-    {
-      "title": "PRODUCTS",
-      "url": "/products",
-      "component": ProductionQuantityLimits
-    },
-    {
-      "title": "ORDERS",
-      "url": "/orders",
-      "component": ShoppingCart
-    },
-    {
-      "title": "REVIEWS",
-      "url": "/reviews",
-      "component": Reviews
-    },
-    {
-      "title": "BRANDS",
-      "url": "/brands",
-      "component": BrandingWatermark
-    },
 
-    // {
-    //   "title": "AUTHENTICATION",
-    //   "url": "/brands",
-    //   "component": Security
-    // },
-    // {
-    //   "title": "ICONS",
-    //   "url": "/brands",
-    //   "component": Apps
-    // },
-    // {
-    //   "title": "OTHER PAGES",
-    //   "url": "/brands",
-    //   "component": Dashboard
-    // },
-  ];
-
-  console.log("props", { props });
+  // console.log("props", { props });
   return (
     <>
       <Drawer variant="permanent" open={props.open}>
@@ -252,7 +180,7 @@ export default function Sidebar(props) {
         <List>
           {sideBarListArray.map((value, index) => {
             return (
-              <ListItem key={value.index} disablePadding sx={{ display: 'block' }}>
+              <ListItem key={index} disablePadding sx={{ display: 'block' }}>
 
 
                 {/* VENDORS,USERS,CATEGORIES,PRODUCTS,ORDERS,REVIEWS,BRANDS */}
@@ -319,9 +247,19 @@ export default function Sidebar(props) {
                         <Link to={value.url} className="sidebar_links">
                           <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                              <StarBorder />
+                              <ManageAccounts />
                             </ListItemIcon>
                             <ListItemText primary="View Vendors" />
+                          </ListItemButton>
+                        </Link>
+                      </List>
+                      <List component="div" disablePadding>
+                        <Link to={value.url2} className="sidebar_links">
+                          <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                              <Person2 />
+                            </ListItemIcon>
+                            <ListItemText primary="Vendor Profile" />
                           </ListItemButton>
                         </Link>
                       </List>
@@ -329,7 +267,6 @@ export default function Sidebar(props) {
 
                   </> : ""
                 }
-
                 {
                   value.title === 'USERS' ? <>
                     <ListItemButton

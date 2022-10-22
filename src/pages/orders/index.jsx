@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import { NewOrders } from "../../components/orders/NewOrders";
 import { theme } from "./style/custom-theme";
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { Box, Grid } from "@mui/material";
 import AppBarElement from "../../components/appbar";
 

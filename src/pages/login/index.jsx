@@ -18,7 +18,7 @@ const Login = () => {
           <Grid item xs={12} md={6}>
             <div className="login_rightside">
               <div className="login_div">
-                <img src={logo} className="login_logo" />
+                <img src={logo} className="login_logo" alt="logo"/>
                 <form method="POST" className="login_form">
                   <div className="login_form_group">
                     <label for="email" className="login_label">
