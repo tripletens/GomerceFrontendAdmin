@@ -86,3 +86,9 @@
     margin-right: -10px;
     margin-bottom: 0px;
 }
+
+.login_password_alert{
+    text-align: left;
+    color: red;
+    margin: 5px;
+}

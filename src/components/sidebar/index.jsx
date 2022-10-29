@@ -214,6 +214,8 @@ export default function Sidebar(props) {
                   </> : ""
                 }
 
+                {value.title === 'DASHBOARD' && <Divider/>}
+
                 {
                   value.title === 'VENDORS' ? <>
                     <ListItemButton
@@ -311,6 +313,8 @@ export default function Sidebar(props) {
                   </> : ""
                 }
 
+                {value.title === 'USERS' && <Divider/>}
+                
                 {
                   value.title === 'CATEGORIES' ? <>
                     <ListItemButton
