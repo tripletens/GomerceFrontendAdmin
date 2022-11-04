@@ -34,10 +34,6 @@ const Vendors = () => {
             <AddItemVendor />
           </Stack>
            <Vendor />  
-           
-           {/* { show &&  <ViewOneVendor />  }  */}
-          
-           {/* <Vendor /> { open && <ViewOneVendor /> } */}
         </Box>
       </Box>
     </>
