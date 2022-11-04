@@ -7,6 +7,7 @@ import { grey } from '@mui/material/colors';
 import store from '../../my_db'
 import { CardMedia } from '@mui/material';
 import { Text7, Text4, Text5, Text6, BootstrapButton } from './postStyle'
+import { Close } from '@mui/icons-material';
 
 
 const style = {
@@ -50,6 +51,9 @@ const VendorDetail = ({ setOpen, open, id }) => {
                   return(
                     <>
                         <Stack key={id} className='ven-stack'>
+                             <Stack direction="row" justifyContent='space-between' sx={{width:'100%'}}>
+                                <Close onClick={handleClose} sx={{'&:hover': {backgroundColor: '#000', color: '#fff' }, margin: ' 0 10px'}}/>
+                            </Stack>
                             <CardMedia
                                 sx={{width: 120, height: 120, borderRadius: '20px', marginBottom: '20px'}}
                                 component="img"                                

@@ -3,6 +3,7 @@ import AppBarElement from "../../components/appbar";
 import { styled } from '@mui/material/styles';
 import { Box, Stack } from "@mui/system";
 import DashboardHeader from "../../components/dashboardHeader";
+import VendorProf from '../../components/vendor/VendorProf';
 
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -18,10 +19,10 @@ let name = 'Sony'
 
 const VendorProfile = () => {
   return (
-        <>
-            <Box sx={{ display: 'flex' }}>
-                <AppBarElement />
-                <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <>
+          <Box sx={{ display: 'flex' }}>
+              <AppBarElement />
+              <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
                 <Stack
                     direction="row"
@@ -30,9 +31,10 @@ const VendorProfile = () => {
                     margin="30px 0" >
                     <DashboardHeader page={`${name} Profile` } title={` Hello, Vendor ${name}`} />
                 </Stack>
-                </Box>
-            </Box>
-        </>
+                <VendorProf />  
+              </Box>
+          </Box>
+      </>
   )
 }
 

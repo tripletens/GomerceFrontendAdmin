@@ -1,0 +1,91 @@
+.vendprof-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Vcard-media {
+    width: 90%;
+    height: 90%;
+}
+
+.leftBar{
+    display: flex;
+    flex-grow: 1;
+    min-height: 20vh;
+    border-right: 1px solid rgb(238, 238, 238);
+    width: 150px;
+}
+
+.rightBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 5;
+    min-height: 20vh;
+    width: 350px;
+}
+
+.social {
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.writeImg{
+    /* height: 100px;
+    width: 100px;
+    border-radius: 10px; */
+    cursor: 'pointer'
+}
+
+.box{
+    width: 28%;
+    height: 110px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0;
+}
+
+.one-left{
+
+    width: 30%;
+    padding: 10px;
+    margin: 0;
+    border-radius: 15px;
+    height: 70px;
+}
+
+.one-left.left{
+    background: rgba(33, 116, 224, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.one-left.center{
+    background: goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.one-left.right{
+    background: rgba(1, 170, 105, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

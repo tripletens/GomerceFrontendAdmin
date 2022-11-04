@@ -26,6 +26,7 @@ export const Text3 = styled(Typography)({
   fontSize: '14px',
   margin: '0 auto',
 })
+
 export const Text4 = styled(Typography)({
   color: '#757575',
   fontSize: '16px',
@@ -58,6 +59,29 @@ export const Text7 = styled(Typography)({
   color: '#757575'
 })
 
+export const Text8 = styled(Typography)({
+  fontWeight: 'bold',
+  fontSize: '15px',
+  margin: '10px auto',
+  color: '#757575',
+  padding: '0 20px'
+})
+
+export const Text9 = styled(Typography)({
+  margin: '0 auto',
+  color: '#757575',
+  padding: '0 20px'
+})
+
+export const Text10 = styled(Typography)({
+  color: '#757575',
+  fontSize: '16px',
+  padding: '0',
+  margin: '0 0 0 20px',
+  width: '80%'
+})
+
+
 export const SytledModal = styled(Modal)({
   display: "flex",
   alignItems: "center",
@@ -76,6 +100,23 @@ export const BootstrapButton = styled(Button)({
   boxShadow: 'none',
   textTransform: 'none',
   borderRadius: '5em',
+  fontSize: 14,
+  height: "35px",
+  border: '1px solid',
+  lineHeight: 1.5,
+  backgroundColor: cyan[500],
+  borderColor: '#0288d',
+  '&:hover': {
+    backgroundColor: '#039be5',
+    borderColor: '#039be5',
+  }
+});
+
+export const MyButton = styled(Button)({
+  boxShadow: 'none',
+  textTransform: 'none',
+  borderRadius: '5em',
+  width: '120px',
   fontSize: 14,
   height: "35px",
   border: '1px solid',

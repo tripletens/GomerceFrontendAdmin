@@ -19,13 +19,11 @@
     margin: auto 0;
 }
 
-
-.card-media{
-    width: 90%; 
-    height: 90%;
+.card {
+    width: 300px;
 }
 
-.vendor-card{
+.vendor-card {
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -34,27 +32,15 @@
     margin: 0 auto;
 }
 
-.card{
-    width: 300px;
-}
-
-.style{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px,;
-    /* bgcolor: background.paper', */
-    border: 2px solid #fff;
-    box-shadow: 24px;
-    border-radius: 30px;
-    padding: 3px,
-}
-
-.ven-stack{
+.ven-stack {
     background: white;
-    direction:column;
-    width:50%;
+    direction: column;
+    width: 50%;
     min-height: 5vh;
     align-items: center;
+}
+
+.card-media {
+    width: 90%;
+    height: 90%;
 }
