@@ -15,8 +15,25 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Box, Stack } from "@mui/system";
 import { useState } from "react";
 import useTable from "./useTable";
-// import styled from "@emotion/styled";
-import { StyledTableCell, StyledTableRow } from "./tableStyle";
+import styled from "@emotion/styled";
+import { TableCell, tableCellClasses, TableRow } from "@mui/material";
+// import { StyledTableCell, StyledTableRow } from "./tableStyle";
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  "&:nth-of-type(odd)": { backgroundColor: theme.palette.action.hover },
+  // hide last border
+  "&:last-child td, &:last-child th": { border: 0 },
+}));
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.primary.dark,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
 
 const rows = [
   {
@@ -94,7 +111,7 @@ const headCells = [
   { id: "action", label: "Action", disableSorting: true },
 ];
 
-export const NewOrders = () => {
+export const AllProducts = () => {
   // const [page, setPage] = useState(0);
   // const [rowsPerPage, setRowsPerPage] = useState(5);
   // const [lastPage, setLastPage] = useState(0);

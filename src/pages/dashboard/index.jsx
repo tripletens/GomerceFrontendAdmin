@@ -8,6 +8,9 @@ import { Box, Grid } from "@mui/material";
 import SalesOrdersChart from "../../components/chart/chartSalesOrders";
 
 import AppBarElement from "../../components/appbar";
+import ChartUserActivity from "../../components/chart/chartUserActivity";
+import NewCustomersComponent from "../../components/newcustomers";
+
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -27,17 +30,25 @@ const Dashboard = () => {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <DrawerHeader />
           <DashboardTopAnalytics />
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={12} md={8}>
+          <Grid container spacing={0}>
+            <Grid item xs={12} sm={12} md={7}>
               <SalesReportChart/>
             </Grid>
-            <Grid item xs={12} sm={12} md={4}>
+            <Grid item xs={12} sm={12} md={5}>
                 <SalesOrdersChart/>
+            </Grid>
+          </Grid>
+
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={12} md={7}>
+              <ChartUserActivity/>
+            </Grid>
+            <Grid item xs={12} sm={12} md={5}>
+              <NewCustomersComponent/>
             </Grid>
           </Grid>
         </Box>
       </Box>
-
     </>
   );
 };

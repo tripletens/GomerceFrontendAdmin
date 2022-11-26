@@ -93,81 +93,9 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-// const Search = styled('div')(({ theme }) => ({
-//   display: 'flex',
-//   justifyContent: 'space-around',
-//   alignItems: 'center',
-//   borderRadius: '20px',
-//   backgroundColor: alpha(theme.palette.common.black, 0.05),
-//   '&:hover': {
-//     backgroundColor: alpha(theme.palette.common.black, 0.03),
-//   },
-//   marginRight: theme.spacing(2),
-//   marginLeft: 0,
-//   width: '100%',
-//   [theme.breakpoints.up('sm')]: {
-//     marginLeft: theme.spacing(3),
-//     width: 'auto',
-//   },
-// }));
-
-// const SearchIconWrapper = styled('div')(({ theme }) => ({
-//   padding: theme.spacing(0, 2),
-//   color: '#757172',
-//   height: '100%',
-//   pointerEvents: 'none',
-//   display: 'flex',
-//   alignItems: 'center',
-//   justifyContent: 'flex-end',
-// }));
-
-// const StyledInputBase = styled(InputBase)(({ theme }) => ({
-//   color: '#928d8e',
-//   '& .MuiInputBase-input': {
-//     padding: theme.spacing(1, 1, 1, 0),
-//     // vertical padding + font size from searchIcon
-//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-//     transition: theme.transitions.create('width'),
-//     width: '100%',
-//     [theme.breakpoints.up('md')]: {
-//       width: '40ch',
-//     },
-//   },
-// }));
-
-// const Icons = styled(Box)(({ theme }) => ({
-//   display: 'none',
-//   gap: '20px',
-//   alignItems: 'center',
-//   [theme.breakpoints.up("sm")]: {
-//     display: 'flex'
-//   }
-// }));
-
-// const UserBox = styled(Box)(({ theme }) => ({
-//   display: 'flex',
-//   gap: '10px',
-//   alignItems: 'center',
-//   [theme.breakpoints.up("sm")]: {
-//     display: 'none'
-//   }
-// }));
-
 export default function Sidebar(props) {
   const theme = useTheme();
 
-  // const [open, setOpen] = React.useState(false);
-
-  // const handleDrawerOpen = () => {
-  //   setOpen(true);
-  // };
-
-  // const handleDrawerClose = () => {
-  //   setOpen(false);
-  // };
-
-
-  // console.log("props", { props });
   return (
     <>
       <Drawer variant="permanent" open={props.open}>
@@ -351,6 +279,14 @@ export default function Sidebar(props) {
                               <StarBorder />
                             </ListItemIcon>
                             <ListItemText primary="View Categories" />
+                          </ListItemButton>
+                        </Link>
+                        <Link to={value.url} className="sidebar_links">
+                          <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                              <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="Manage Categories" />
                           </ListItemButton>
                         </Link>
                       </List>

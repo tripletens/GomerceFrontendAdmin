@@ -15,86 +15,64 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Box, Stack } from "@mui/system";
 import { useState } from "react";
 import useTable from "./useTable";
-// import styled from "@emotion/styled";
 import { StyledTableCell, StyledTableRow } from "./tableStyle";
+import SelectComponent from "../select";
 
 const rows = [
+  
   {
-    id: "1143155",
-    name: "Acer Nitro 5",
-    img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-    customer: "John Smith",
-    date: "1 March",
-    amount: "785",
-    method: "Cash on Delivery",
-    status: "Approved",
+    id: "23422",
+    name: "Electronics",
+    slug: "electronics",
+    tags: "home appliances, electronics",
+    date: "5 March 2021",
+    status: "Active",
   },
   {
-    id: "2235235",
-    name: "Playstation 5",
-    img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
-    customer: "Michael Doe",
-    date: "1 March",
-    amount: "900",
-    method: "Online Payment",
-    status: "Delivered",
+    id: "23423",
+    name: "Chidren Food",
+    slug: "children_food",
+    tags: "home, food, children",
+    date: "3 March 2022",
+    status: "Active",
   },
   {
-    id: "2342353",
-    name: "Redragon S101",
-    img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
-    customer: "John Smith",
-    date: "1 March",
-    amount: "35",
-    method: "Cash on Delivery",
-    status: "Pending",
+    id: "23424",
+    name: "Farm Equipments",
+    slug: "farm_equipments",
+    tags: "farm appliances, agrticulture",
+    date: "3 April 2022",
+    status: "Active",
   },
   {
-    id: "2357741",
-    name: "Razer Blade 15",
-    img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
-    customer: "Jane Smith",
-    date: "1 March",
-    amount: "920",
-    method: "Online",
-    status: "Approved",
+    id: "23425",
+    name: "Gadgets",
+    slug: "gadgets",
+    tags: "appliances, electronics",
+    date: "3 April 2020",
+    status: "Active",
   },
   {
-    id: "2342355",
-    name: "ASUS ROG Strix",
-    img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-    customer: "Harold Carol",
-    date: "1 March",
-    amount: "2000",
-    method: "Online",
-    status: "Delivered",
-  },
-  {
-    id: "2342359",
-    name: "ASUS ROG Strix",
-    img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-    customer: "Harold Carol",
-    date: "1 March",
-    amount: "2000",
-    method: "Online",
-    status: "Pending",
+    id: "23426",
+    name: "Home Appliances",
+    slug: "home_appliances",
+    tags: "home appliances, electronics",
+    date: "3 June 2022",
+    status: "Active",
   },
 ];
 
 const headCells = [
   { id: "id", label: "ID" },
-  { id: "item", label: "Item" },
   { id: "name", label: "Name" },
-  { id: "customer", label: "Customer" },
-  { id: "itemCount", label: "No. of Items" },
-  { id: "amount", label: "Price" },
-  { id: "method", label: "Payment Method" },
+  { id: "slug", label: "Slug" },
+  { id: "tags", label: "Tags" },
   { id: "status", label: "Status" },
-  { id: "date", label: "Date" },
+  { id: "date", label: "Date Created" },
   { id: "action", label: "Action", disableSorting: true },
 ];
 
-export const NewOrders = () => {
+export const AllCategoriesTable = () => {
   // const [page, setPage] = useState(0);
   // const [rowsPerPage, setRowsPerPage] = useState(5);
   // const [lastPage, setLastPage] = useState(0);
@@ -119,7 +97,7 @@ export const NewOrders = () => {
           0,
           (1 + page) * rowsPerPage - recordsAfterPagingAndSorting().length
         )
-      : 0;
+      : 5;
 
   const handleSearch = (event) => {
     let target = event.target;
@@ -131,13 +109,28 @@ export const NewOrders = () => {
             (item) =>
               item.id.includes(target.value) ||
               item.name.toLowerCase().includes(target.value) ||
-              item.customer.toLowerCase().includes(target.value) ||
-              item.amount.includes(target.value) ||
-              item.status.toLowerCase().includes(target.value)
+              item.slug.toLowerCase().includes(target.value) ||
+              item.tags.includes(target.value) ||
+              item.status.toLowerCase().includes(target.value)||
+              item.date.toLowerCase().includes(target.value)
           );
       },
     });
   };
+
+  const CategoryDropdownData = {
+    title : "Info",
+    label : "Info",
+    data : [{
+        title : "Edit",
+        value : "10", // option id
+        url : "#"
+    },{
+      title : "Delete",
+      value : "10", // option id
+      url : "#"
+  }]
+  }
 
   return (
     <>
@@ -173,23 +166,14 @@ export const NewOrders = () => {
               {recordsAfterPagingAndSorting().map((item) => (
                 <StyledTableRow key={item.id}>
                   <StyledTableCell>{item.id}</StyledTableCell>
-                  <StyledTableCell>
-                    <div className="cellWrapper">
-                      <img src={item.img} alt="" className="image" />
-                    </div>
-                  </StyledTableCell>
                   <StyledTableCell className="tableCell">
                     {item.name}
                   </StyledTableCell>
                   <StyledTableCell className="tableCell">
-                    {item.customer}
-                  </StyledTableCell>
-                  <StyledTableCell className="tableCell"></StyledTableCell>
-                  <StyledTableCell className="tableCell">
-                    ${item.amount}
+                    {item.slug}
                   </StyledTableCell>
                   <StyledTableCell className="tableCell">
-                    {item.method}
+                    {item.tags}
                   </StyledTableCell>
                   <StyledTableCell className="tableCell">
                     <span className={`status ${item.status.toLowerCase()}`}>
@@ -200,16 +184,19 @@ export const NewOrders = () => {
                     {item.date}
                   </StyledTableCell>
                   <StyledTableCell className="tableCell">
-                    <ButtonGroup
-                      size="small"
+                    {/* <ButtonGroup
+                      // size="small"
                       variant="outlined"
                       aria-label="outlined button group"
+                      sx = {{ width: "30px" }}
                     >
                       <Button sx={{ borderRadius: 15 }}>Info</Button>
                       <Button sx={{ borderRadius: 15 }}>
                         <KeyboardArrowDownIcon />
+                        <SelectComponent content={CategoryDropdownData}></SelectComponent>
                       </Button>
-                    </ButtonGroup>
+                    </ButtonGroup> */}
+                    <SelectComponent content={CategoryDropdownData}></SelectComponent>
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
@@ -221,7 +208,7 @@ export const NewOrders = () => {
             </TableBody>
             <TableFooter>
               <StyledTableRow>
-                <StyledTableCell colSpan={6} />
+                <StyledTableCell colSpan={5} />
                 <TblPagination />
               </StyledTableRow>
             </TableFooter>
