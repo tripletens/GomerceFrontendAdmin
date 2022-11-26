@@ -11,6 +11,7 @@ import { Reviews } from "./pages/reviews";
 import { Brands } from "./pages/brands";
 import VendorProfile from "./pages/vendors/VendorProfile";
 import { ToastContainer } from "react-toastify";
+import { ManageCategories } from "./pages/categories/manageCategories";
 
 const App = () => {
   return (
@@ -21,7 +22,11 @@ const App = () => {
         <Route path="/vendors" element={<Vendors />} />
         <Route path="/profile" element={<VendorProfile />} />
         {/* <Route path="/singleVendor/:venId" element={ <Vendors /> } /> */}
-        <Route path="/categories" element={<Categories />} />
+        <Route path="/categories">
+          <Route index element={<Categories />}/>
+          <Route path="manage" element={<ManageCategories />} />
+        </Route>
+
         <Route path="/orders" element={<Orders />} />
         <Route path="/users" element={<Users />} />
         <Route path="/products" element={<Products />} />

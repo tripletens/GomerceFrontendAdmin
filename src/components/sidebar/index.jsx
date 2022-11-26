@@ -194,7 +194,6 @@ export default function Sidebar(props) {
                         </Link>
                       </List>
                     </Collapse> : ""}
-
                   </> : ""
                 }
                 {
@@ -237,7 +236,6 @@ export default function Sidebar(props) {
                         </Link>
                       </List>
                     </Collapse> : ""}
-
                   </> : ""
                 }
 
@@ -263,12 +261,6 @@ export default function Sidebar(props) {
                         {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                       </value.component>
                       <ListItemText primary={value.title} sx={{ opacity: props.open ? 1 : 0, color: grey[600] }} />
-
-                      {/* {props.openCategories ? (
-                        <CloseIcon style={{ width: "32px" }} />
-                      ) : (
-                        <KeyboardArrowDownIcon />
-                      )} */}
                     </ListItemButton>
 
                     {props.openCategories ? <Collapse in={props.handleOpenCategoriesClick} timeout="auto" unmountOnExit>
@@ -281,7 +273,8 @@ export default function Sidebar(props) {
                             <ListItemText primary="View Categories" />
                           </ListItemButton>
                         </Link>
-                        <Link to={value.url} className="sidebar_links">
+                        
+                        <Link to={value.menu1.url} className="sidebar_links">
                           <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
                               <StarBorder />
@@ -291,7 +284,6 @@ export default function Sidebar(props) {
                         </Link>
                       </List>
                     </Collapse> : ""}
-
                   </> : ""
                 }
 
