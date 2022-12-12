@@ -1,3 +1,6 @@
+import { AccessTime, EventNoteOutlined, MailOutlined, MeetingRoomOutlined, ShoppingCart } from "@mui/icons-material";
+
+
 const data = [
   {
     id: 1,
@@ -17,7 +20,7 @@ const data = [
     id: 2,
     first_name: 'Anna',
     last_name: 'Johnson',
-    mobile: '+234-8154107035',
+    mobile: '+234-8154107030',
     image: '../vendor_img/animated_2.jpg',
     email: 'ann_johnson@yahoo.com',
     birthday: 'March 19, 1989',
@@ -126,5 +129,80 @@ const data = [
     payout: '$21000'
   },
 ];
+
+export const categories = [
+    {
+        id: 1,
+        img: <ShoppingCart sx={{fontSize:30}}/>,
+        title: 'New Order',
+        desc: "Chinonso has placed new order",
+        time_symbol: <AccessTime sx={{fontSize:18}} />,
+        time: "10 AM",
+        color: '#ef6c00'
+    },
+    {
+        id: 2,
+        img: <MailOutlined sx={{fontSize:30}}/>,
+        title: 'New Enquiry',
+        desc: "Emma wants to know more about bulk order",
+        time_symbol: <AccessTime sx={{fontSize:18}}/>,
+        time: "02 PM",
+        color: '#00838f'
+    },
+    {
+        id: 3,
+        img: <EventNoteOutlined sx={{fontSize:30}}/>,
+        title: 'Support',
+        desc: "customer has difficulty",
+        time_symbol: <AccessTime sx={{fontSize:18}}/>,
+        time: "08 AM",
+        color: '#ab47bc'
+    },
+    {
+        id: 4,
+        img: <MeetingRoomOutlined sx={{fontSize:30}}/>,
+        title: 'Meetup',
+        desc: "Staff not available currently, in meeting",
+        time_symbol: <AccessTime sx={{fontSize:18}}/>,
+        time: "04 PM",
+        color: '#0277bd'
+    },
+    {
+        id: 5,
+        img: <ShoppingCart sx={{fontSize:30}}/>,
+        title: 'New Order',
+        desc: "Chinonso has placed new order",
+        time_symbol: <AccessTime sx={{fontSize:18}} />,
+        time: "10 AM",
+        color: '#ef6c00'
+    },
+    {
+        id: 6,
+        img: <MailOutlined sx={{fontSize:30}}/>,
+        title: 'New Enquiry',
+        desc: "Emma wants to know more about bulk order",
+        time_symbol: <AccessTime sx={{fontSize:18}}/>,
+        time: "02 PM",
+        color: '#00838f'
+    },
+    {
+        id: 7,
+        img: <EventNoteOutlined sx={{fontSize:30}}/>,
+        title: 'Support',
+        desc: "customer has difficulty",
+        time_symbol: <AccessTime sx={{fontSize:18}}/>,
+        time: "08 AM",
+        color: '#ab47bc'
+    },
+    {
+        id: 8,
+        img: <MeetingRoomOutlined sx={{fontSize:30}} />,
+        title: 'Meetup',
+        desc: "Staff not available currently, in meeting",
+        time_symbol: <AccessTime sx={{fontSize:18}}/>,
+        time: "04 PM",
+        color: '#0277bd'
+    },
+]
 
 export default data;
