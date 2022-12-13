@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,66 +7,86 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import Pick from './Pick';
+import { grey } from '@mui/material/colors';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
+  { id: 'order_id', label: 'Order_ID', minWidth: 170 },
+
+  { id: 'product_name', label: 'Product_Name', minWidth: 100 },
+
   {
-    id: 'population',
-    label: 'Population',
+    id: 'order_date',
+    label: 'Order_Date',
     minWidth: 170,
     align: 'right',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
+    id: 'order_cost',
+    label: 'Order_Cost',
     minWidth: 170,
     align: 'right',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
-    id: 'density',
-    label: 'Density',
+    id: 'status',
+    label: 'Status',
     minWidth: 170,
     align: 'right',
     format: (value) => value.toFixed(2),
   },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
+function createData(order_id, product_name, order_date, order_cost, status) {
+  return { order_id, product_name, order_date, order_cost, status};
 }
 
 const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('24541', 'Men Casual', 'Oct 12, 2022', '$210', 'completed'),
+  createData('24541', 'Italian Shoe', 'Nov 15, 2022', '$330',	'Processing'),
+  createData('24541', 'Fotlets', 'Dec 2, 2022', '$205',	'Pending'),
+  createData('24541', 'Diamon-Ring', 'Dec 11, 2022', '$300', 'Returned'	),
+  createData('24541', '24541', 'Dec 12, 2022', '$290', 'Cancelled'	),
 ];
 
-export default function OrderTable() {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+const presentMonth = (control) => {
+    let my_date = new Date();
+    let today = my_date.getUTCDate();
+    let thisMonth = my_date.getMonth();
+    let thisYear = my_date.getFullYear();
+    return {Day: today, Month: thisMonth, Year: thisYear, control}
+}
 
-  const handleChangePage = (event, newPage) => {
+export default function OrderTable() {
+
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [out, setOut] = useState(0);
+  const [period, setPeriod] = useState(0);
+
+  const handleChangePage = (e, newPage) => {
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
+
+  useEffect(()=> {
+      const periods = () => {
+          let months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+          let { Month, Day, Year } = presentMonth(null);
+          if(out.control === -30) {
+            Month -= 1;
+            Day = 30;
+          }
+          setPeriod({ Month: months[Month], Day:Day,  Year:Year });
+      } 
+      periods();
+  },[setPeriod, out]);
+
+ 
+  const handleChangeRowsPerPage = (e) => {
+    setRowsPerPage(+e.target.value);
     setPage(0);
   };
 
@@ -76,11 +96,17 @@ export default function OrderTable() {
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-              <TableCell align="center" colSpan={2}>
-                Country
+
+              <TableCell align="left" colSpan={2} sx={{fontSize:'25px', color:grey[500]}}>
+                Recent Orders
               </TableCell>
-              <TableCell align="center" colSpan={3}>
-                Details
+
+              <TableCell align="center" colSpan={2} sx={{fontSize:'16px', color:grey[600]}}>
+                {`${out.Month} ${out.Day}, ${out.Year}`} - {`${period.Month} ${period.Day}, ${period.Year}`}
+              </TableCell>
+
+              <TableCell align="right" colSpan={1}>
+                <Pick setOut={setOut} out={out} presentMonth={presentMonth}/>
               </TableCell>
             </TableRow>
             <TableRow>
@@ -88,8 +114,7 @@ export default function OrderTable() {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ top: 57, minWidth: column.minWidth }}
-                >
+                  style={{ top: 57, minWidth: column.minWidth }} >
                   {column.label}
                 </TableCell>
               ))}
@@ -124,8 +149,7 @@ export default function OrderTable() {
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+        onRowsPerPageChange={handleChangeRowsPerPage} />
     </Paper>
   );
 }
