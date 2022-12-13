@@ -1,0 +1,35 @@
+.table {
+  .cellWrapper {
+    display: flex;
+    align-items: center;
+
+    .image {
+      width: 32px;
+      height: 32px;
+      border-radius: 15%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+  }
+
+  // .actionButton {
+  // }
+
+  .status {
+    padding: 5px 15px;
+    border-radius: 15px;
+
+    &.approved {
+      color: goldenrod;
+      background-color: rgba(218, 165, 32, 0.274);
+    }
+    &.pending {
+      color: peru;
+      background-color: rgba(205, 134, 63, 0.349);
+    }
+    &.delivered {
+      color: green;
+      background-color: rgba(0, 128, 0, 0.349);
+    }
+  }
+}

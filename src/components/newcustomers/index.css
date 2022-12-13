@@ -1,0 +1,34 @@
+
+.new_customers_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    align-items: center;
+    /* margin: auto; */
+    padding: 10px;
+    border-bottom:1px ;
+}
+
+
+.new_customers_name_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new_customers_container{
+
+}
+
+.new_customers_user{
+    border: 0.5px solid #000000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

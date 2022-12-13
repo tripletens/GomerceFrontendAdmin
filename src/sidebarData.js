@@ -24,7 +24,12 @@ export const sideBarListArray = [
     {
       "title": "CATEGORIES",
       "url": "/categories",
-      "component": Category
+      "component": Category,
+      "menu1": {
+        "url": "/categories/manage",
+        "title": "Manage Category",
+        "component": ""
+      }
     },
     {
       "title": "PRODUCTS",
