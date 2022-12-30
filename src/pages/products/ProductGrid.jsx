@@ -1,9 +1,23 @@
 import React from "react";
-import { Divider, Grid, TextField } from "@mui/material";
+import {
+  Divider,
+  Grid,
+  IconButton,
+  InputAdornment,
+  InputBase,
+  Paper,
+  Select,
+  TextField,
+} from "@mui/material";
 import ProductCard from "../../components/products/productCard/ProductCard";
 import PageHeader from "../../components/PageHeader";
 import AddProduct from "../../components/products/AddProduct/AddProduct";
 
+import SearchIcon from "@mui/icons-material/Search";
+import DirectionsIcon from "@mui/icons-material/Search";
+
+import { AccountBalance } from "@mui/icons-material";
+import SelectProductCategory from "../../components/products/SelectProductCategory/SelectProductCategory";
 const sampleProducts = [
   {
     description: "mobile phone",
@@ -50,16 +64,32 @@ const ProductGrid = () => {
       {/* Navbar */}
       <Grid container justifyContent="space-between">
         <Grid item>
-          <TextField
-            placeholder="search"
-            type="search"
-            size="small"
-            sx={{ width: "50ch" }}
-          ></TextField>
+          <Grid container>
+            <Paper
+              component="form"
+              sx={{
+                p: "2px 4px",
+                display: "flex",
+                alignItems: "center",
+                width: "25em",
+              }}
+            >
+              <TextField
+                sx={{ ml: 1, flex: 1 }}
+                size="small"
+                placeholder="Search..."
+                inputProps={{ "aria-label": "Search product categories" }}
+              />
+              <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+                <SearchIcon />
+              </IconButton>
+            </Paper>
+            <SelectProductCategory />
+          </Grid>
         </Grid>
-        <Grid item></Grid>
         <AddProduct />
       </Grid>
+
       {/* product */}
       <Grid>
         <Divider sx={{ my: 2 }} />
