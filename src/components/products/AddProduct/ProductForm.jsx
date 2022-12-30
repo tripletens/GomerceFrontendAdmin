@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import { Close, PhotoCamera, Send } from "@mui/icons-material";
 import { Stack } from "@mui/system";
 import { Button } from "@mui/material";
+import SelectProductCategory from "../SelectProductCategory/SelectProductCategory";
 
 const ProductForm = () => {
   return (
@@ -26,13 +27,6 @@ const ProductForm = () => {
           padding: "10px 0px",
         }}
       >
-        {/* <Close
-        onClick={(e) => setOpen(false)}
-        sx={{
-          "&:hover": { backgroundColor: "#000", color: "#fff" },
-          margin: " 0 10px",
-        }}
-      /> */}
         <Box
           component="form"
           sx={{
@@ -57,14 +51,7 @@ const ProductForm = () => {
               }}
             />
 
-            <TextField
-              label="Select Category"
-              id="category"
-              sx={{ m: 2, width: "35ch" }}
-              placeholder="open this select"
-              size="small"
-              type="button"
-            />
+            <SelectProductCategory />
             <TextField
               id="description"
               sx={{ m: 2, width: "74ch" }}
@@ -72,6 +59,7 @@ const ProductForm = () => {
               type="text"
               size="large"
               multiline
+              rows={3}
             />
 
             <TextField
@@ -104,9 +92,7 @@ const ProductForm = () => {
               id="Quality"
               label="Business Address"
               size="small"
-              sx={{ m: 2, width: "35ch" }}
-              placeholder="Placeholder"
-              multiline
+              type="select"
             />
             <TextField
               id="tags"
