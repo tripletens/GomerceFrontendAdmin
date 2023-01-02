@@ -1,13 +1,12 @@
 import './post.css'
 import React from 'react'
-import {Stack, CardMedia, Typography, Card, 
-        CardHeader, Avatar, IconButton, CardContent} from '@mui/material';
+import { Stack, CardMedia, Typography, Card, 
+        CardHeader, Avatar, IconButton, CardContent } from '@mui/material';
 import { cyan } from '@mui/material/colors';
-import { Box} from '@mui/system';
+import { Box } from '@mui/system';
 import { Text, Text2, Text3 } from './postStyle'
 import { AllInclusive } from '@mui/icons-material';
 import VendorDetail from './VendorDetail';
-
 
 
 const Post = ({ id, image, first_name, last_name, mobile, email, items, sold, payout}) => {
@@ -17,11 +16,11 @@ const Post = ({ id, image, first_name, last_name, mobile, email, items, sold, pa
 
   return (
     <>
-      <Card className='card' elevation={2}>
+      <Card className ='card' elevation = {2} >
         <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: cyan[300] }} aria-label="recipe">
-              {first_name[0]}{last_name[0]}
+          avatar = {
+            <Avatar sx = {{ bgcolor: cyan[300] }} aria-label="recipe">
+              { first_name[0]}{last_name[0] }
             </Avatar>
           }
           action={

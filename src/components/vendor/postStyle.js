@@ -1,7 +1,24 @@
 import styled from '@emotion/styled';
-import { Button, Modal, Typography} from "@mui/material";
+import { Button, CardMedia, Modal, Typography} from "@mui/material";
 import { cyan } from '@mui/material/colors';
 import { Box } from "@mui/system";
+import { theme } from './breakpoints'
+
+
+export const MediaCard = styled(CardMedia)({
+  width: 80, 
+  height: 80, 
+  borderRadius: '20px', 
+  marginBottom: '20px', 
+  marginTop:'20px',
+  // [theme.breakpoints.down("sm")]: {
+  //   width: 40, 
+  //   height: 40, 
+  //   borderRadius: '10px', 
+  //   marginBottom: '10px', 
+  //   marginTop:'10px',
+  // },
+})
 
 
 export const Text = styled(Typography)({
@@ -32,6 +49,14 @@ export const Text4 = styled(Typography)({
   fontSize: '16px',
   padding: '0',
   margin: '0',
+  // [theme.breakpoints.up('tablet')]:{
+  //   fontSize: 25,
+  //   fontFamily: 'monospace',
+  //   width: '100%',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  // },
 })
 
 export const Text5 = styled(Typography)({
@@ -47,7 +72,15 @@ export const Text6 = styled(Typography)({
   fontSize: '17px',
   fontWeight: 'bold',
   color: 'gray',
-  marginTop: '20px'
+  marginTop: '20px',
+  // [theme.breakpoints.up('tablet')]:{
+  //   fontSize: 25,
+  //   fontFamily: 'monospace',
+  //   width: '100%',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  // },
 })
 
 
@@ -64,21 +97,54 @@ export const Text8 = styled(Typography)({
   fontSize: '15px',
   margin: '10px auto',
   color: '#757575',
-  padding: '0 20px'
+  padding: '0 20px',
+  // [theme.breakpoints.up('tablet')]:{
+  //   fontSize: 25,
+  //   fontFamily: 'monospace',
+  //   width: '100px',
+  //   margin: '0',
+  // },
 })
 
 export const Text9 = styled(Typography)({
   margin: '0 auto',
   color: '#757575',
-  padding: '0 20px'
+  padding: '0 20px',
+  // [theme.breakpoints.up('tablet')]:{
+  //   fontSize: 25,
+  //   fontFamily: 'monospace',
+  //   width: '100px',
+  //   padding: '0 20px',
+  //   margin: '0',
+  // },
 })
 
 export const Text10 = styled(Typography)({
   color: '#757575',
-  fontSize: '16px',
-  padding: '0',
-  margin: '0 0 0 20px',
-  width: '80%'
+  fontSize: '15px',
+  padding: '0 20px 0 60px',
+  margin: '0',
+  width: '100%',
+  // [theme.breakpoints.between('tablet', 'ipad')]:{
+  //   fontSize: 20,
+  //   fontFamily: 'monospace',
+  //   width: '100%',
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  // },
+})
+
+export const Text11 = styled(Typography)({
+   
+ [theme.breakpoints.between('tablet', 'ipad')]:{
+    fontSize: 25,
+    fontFamily: 'monospace',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 })
 
 
@@ -106,6 +172,9 @@ export const BootstrapButton = styled(Button)({
   lineHeight: 1.5,
   backgroundColor: cyan[500],
   borderColor: '#0288d',
+  // [theme.breakpoints.down("sm")]: {
+  //   fontSize: "12px",
+  // },
   '&:hover': {
     backgroundColor: '#039be5',
     borderColor: '#039be5',
@@ -123,6 +192,13 @@ export const MyButton = styled(Button)({
   lineHeight: 1.5,
   backgroundColor: cyan[500],
   borderColor: '#0288d',
+//  [theme.breakpoints.between('tablet', 'ipad')]:{
+//     fontSize: 25,
+//     padding: '10px 0',
+//     fontFamily: 'monospace',
+//     width: '180px',
+//     margin: '20px 0',
+//   },
   '&:hover': {
     backgroundColor: '#039be5',
     borderColor: '#039be5',
