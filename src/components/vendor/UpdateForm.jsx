@@ -14,9 +14,10 @@ import './vendorprof.css';
 const FieldContainer =  styled(Stack)({
     flexDirection: 'row',
     alignItems :'center',
-    justifyContent :'space-between',
+    justifyContent :'flex-start',
     margin :'10px 20px 10px 5px',
-    width: '100%',
+    width: '87%',
+
     [theme.breakpoints.down('ipad')]:{
         flexDirection: 'column',
         justifyContent: 'flex-start',
@@ -87,8 +88,8 @@ const TextContainer =  styled(Stack)({
 
 const FieldName =  styled(TextField)({
     m: 2, 
-    width: '80ch',
-    margin: '10px 0 10px 5px',
+    width: '40ch',
+    margin: '10px 0 10px 4px',
     [theme.breakpoints.down('ipad')]:{
        width: '38.5ch', 
     },

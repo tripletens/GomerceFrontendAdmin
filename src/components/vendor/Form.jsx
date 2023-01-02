@@ -70,7 +70,7 @@ export default function Form({setOpen}) {
             }} />
             <TextField
             id="outlined-password-input"
-            // sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch' }}
             style
             label="username"
             type="text"
@@ -79,7 +79,7 @@ export default function Form({setOpen}) {
 
             <TextField
             id="outlined-password-input"
-            // sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch' }}
             style
             label="Email"
             type="email"
@@ -88,7 +88,7 @@ export default function Form({setOpen}) {
             
             <TextField
             id="outlined-password-input"
-            // sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch' }}
             style
             label="Password"
             type="password"
@@ -97,7 +97,7 @@ export default function Form({setOpen}) {
             
             <TextField
             id="outlined-password-input"
-            // sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch' }}
             style
             label="Confirm Password"
             type="password"
@@ -106,7 +106,7 @@ export default function Form({setOpen}) {
             
             <TextField
             id="outlined-number"
-            // sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch' }}
             style
             label="Country Code"
             type="number"
@@ -116,7 +116,7 @@ export default function Form({setOpen}) {
             }}/> 
             <TextField
             id="outlined-number"
-            // sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch' }}
             style
             label="Phone Number"
             type="number"
@@ -128,7 +128,7 @@ export default function Form({setOpen}) {
             id="outlined-textarea"
             label="Sale Focus"
             size="small"
-            // sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch' }}
             style
             placeholder="Placeholder"
             multiline
@@ -137,7 +137,7 @@ export default function Form({setOpen}) {
             id="outlined-textarea"
             label="Business Address"
             size="small"
-            // sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch' }}
             placeholder="Placeholder"
             multiline
             />
@@ -145,7 +145,7 @@ export default function Form({setOpen}) {
             id="outlined-textarea"
             label="Date of Birth"
             size="small"
-            // sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch' }}
             style
             placeholder="Placeholder"
             multiline
