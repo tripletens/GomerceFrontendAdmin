@@ -21,9 +21,10 @@ const setCalendar = useCallback((target) => {
 
     const { Day, Month, Year, control } = presentMonth(target);
 
+
     switch (target) {
         case -30:
-          setOut({Month: months[Month-1], Day:1, Year:Year, control: date });                       // Last month
+          setOut({Month: months[Month-1], Day: 1, Year: Year, control: date });                   // Last month
           break;
 
         case -1:
@@ -31,15 +32,15 @@ const setCalendar = useCallback((target) => {
             break;
 
         case 0:
-          setOut({Month: months[Month], Day:(Day-target), Year:Year, control: date });              // Today
+          setOut({Month: months[Month], Day:(Day-target), Year:Year, control: date });            // Today
             break;
 
         case 1:
-            setOut({Month: months[Month], Day:target, Year:Year, control: date });                  // This Month
+            setOut({Month: months[Month], Day:target, Year:Year, control: date });                // This Month
             break;
 
         case 6:
-          setOut({Month: months[Month], Day:(Day-target), Year:Year, control: date });              // Last seven days 
+          setOut({Month: months[Month], Day:(Day-target), Year:Year, control: date });            // Last seven days 
             break;
     
         default:
