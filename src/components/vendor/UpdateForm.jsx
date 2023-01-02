@@ -115,8 +115,9 @@ const FieldText =  styled(TextField)({
 const EStack = styled(Stack)({
     flexDirection:'row',
     alignItems:'center',
-    justifyContent:'space-between' ,
-    margin:'0 20px',
+    justifyContent:'space-between',
+    margin:'20px 0',
+    width: '87.5%',
     
     [theme.breakpoints.down('mobile_lg2')]:{
         justifyContent:'space-between',
@@ -143,7 +144,7 @@ const Mymedia = styled(CardMedia)({
     height: 120, 
     borderRadius: '20px', 
     marginBottom: '20px', 
-    margin:'20px 0 20px -20px',
+    margin:'20px 0 20px 5px',
 
     [theme.breakpoints.down('mobile_lg2')]:{
         margin: '20px 0',
@@ -157,7 +158,7 @@ const Mymedia = styled(CardMedia)({
 })
 
 const Field = styled(TextField)({ 
-   width: '41ch', 
+   width: '40ch', 
    cursor : 'pointer',
    margin: '0 0 0  50px',
 
