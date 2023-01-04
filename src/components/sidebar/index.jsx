@@ -24,6 +24,7 @@ import {Person2, ManageAccounts} from '@mui/icons-material';
 import { grey } from '@mui/material/colors';
 import "./index.css";
 
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -279,6 +280,7 @@ export default function Sidebar(props) {
                             <ListItemIcon>
                               <StarBorder />
                             </ListItemIcon>
+                            
                             <ListItemText primary="Manage Categories" />
                           </ListItemButton>
                         </Link>

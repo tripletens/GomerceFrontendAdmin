@@ -2,16 +2,16 @@
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
-    width: 98%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.Vcard-media {
-    width: 90%;
-    height: 90%;
+.Vcard-media{
+    width: 60%;
+    height: 60%;
 }
 
 .leftBar{
@@ -19,16 +19,16 @@
     flex-grow: 1;
     min-height: 20vh;
     border-right: 1px solid rgb(238, 238, 238);
-    width: 150px;
+    width: 180px;
 }
 
-.rightBar{
+.rightBar {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 5;
     min-height: 20vh;
-    width: 350px;
+    width: 420px;
 }
 
 .social {
@@ -60,7 +60,6 @@
 }
 
 .one-left{
-
     width: 30%;
     padding: 10px;
     margin: 0;
@@ -68,13 +67,14 @@
     height: 70px;
 }
 
-.one-left.left{
+.one-left.left {
     background: rgba(33, 116, 224, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
 }
+
 .one-left.center{
     background: goldenrod;
     display: flex;
@@ -82,10 +82,761 @@
     align-items: center;
     color: white;
 }
+
 .one-left.right{
     background: rgba(1, 170, 105, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+}
+
+.Notable-container{
+    margin: 40px 10px 40px 20px;
+}
+
+
+/* medium screen */
+@media screen and (max-width: 836px){      
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin: 5px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .Vcard-media {
+        width: 60%;
+        height: 60%;
+    }
+    
+    .box {
+        min-width: 180%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 10px;
+        margin: 0 auto;
+        background-color: azure;
+    }
+    .Notable-container {
+        width: 548px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 -23.5%;
+    }
+
+    .ex{
+        width: 548px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 -23.5%;
+    }
+
+    .one-left {
+        width: 30%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content {
+        width: 40%;
+        justify-content: flex-end;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+}
+
+/* medium screen */
+@media screen and (max-width: 820px){      
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin: 5px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .Vcard-media {
+        width: 60%;
+        height: 60%;
+    }
+    
+    .box {
+        min-width: 176%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 10px;
+        margin: 0 auto;
+        background-color: azure;
+    }
+    .Notable-container {
+        width: 531px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 -21%;
+    }
+
+    .ex{
+        width: 531px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 -21%;
+    }
+
+    .one-left {
+        width: 30%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content {
+        width: 40%;
+        justify-content: flex-end;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+}
+
+/* medium screen */
+@media screen and (max-width: 800px){      
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin: 5px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .Vcard-media {
+        width: 60%;
+        height: 60%;
+    }
+    
+    .box {
+        min-width: 171%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 10px;
+        margin: 0 auto;
+        background-color: azure;
+    }
+    .Notable-container {
+        width: 511px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 -19%;
+    }
+
+    .ex{
+        width: 511px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 -19%;
+    }
+
+    .one-left {
+        width: 30%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content {
+        width: 40%;
+        justify-content: flex-end;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+}
+
+/* medium screen */
+@media screen and (max-width: 768px){      
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin: 5px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .Vcard-media {
+        width: 60%;
+        height: 60%;
+    }
+    
+    .box {
+        min-width: 160%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 10px;
+        margin: 0 auto;
+    }
+    .Notable-container {
+        width: 481px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 -14.6%;
+    }
+
+    .ex{
+        width: 481px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 0 -14.5%;
+    }
+
+    .one-left {
+        width: 30%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 45px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content {
+        width: 40%;
+        justify-content: flex-end;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+}
+
+/* Mobile Big screen */
+@media screen and (max-width: 430px){
+.Vcard-media {
+        width: 50%;
+        height: 50%;
+    }
+
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 89%;
+        margin: 5px 0 5px -18px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+  
+    .box {
+        width: 117%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 15px;
+        background-color: azure;
+    }
+    
+    .Notable-container {
+        margin: 20px 0 10px -28px;
+        width: 114.5%;
+    }
+
+    .ex {
+        margin: 20px 0 10px -23px;
+        width: 96%;
+    }
+
+    .one-left {
+        width: 20%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content {
+        width: 40%;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+
+}
+
+/* Mobile mid-Big screen */
+@media screen and (max-width: 414px){
+.Vcard-media {
+        width: 50%;
+        height: 50%;
+    }
+
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 86%;
+        margin: 5px 0 5px -18px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+  
+    .box {
+        width: 115%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 15px;
+        background-color: azure;
+    }
+    
+    .Notable-container {
+        margin: 20px 0 10px -27px;
+        width: 111%;
+    }
+
+    .ex {
+        margin: 20px 0 10px -24px;
+        width: 93%;
+    }
+
+    .one-left {
+        width: 20%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content {
+        width: 40%;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+
+}
+
+@media screen and (max-width: 412px){
+.Vcard-media {
+        width: 50%;
+        height: 50%;
+    }
+
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 85%;
+        margin: 5px 0 5px -18px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+  
+    .box {
+        width: 115%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 15px;
+        background-color: azure;
+    }
+    
+    .Notable-container {
+        margin: 20px 0 10px -26px;
+        width: 109%;
+    }
+
+    .ex {
+        margin: 20px 0 10px -23px;
+        width: 91%;
+    }
+
+    .one-left {
+        width: 20%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content {
+        width: 40%;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+
+}
+
+/*Mobile Mid-mid screen */
+@media screen and (max-width: 393px){
+    .Vcard-media {
+        width: 50%;
+        height: 50%;
+    }
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        margin: 5px 0 5px -17px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .Notable-container {
+        margin: 20px 0 10px -24px;
+        width: 102.8%;
+    }
+
+    .ex{
+        margin: 20px 0 10px -24px;
+        width: 86.6%;
+    }
+
+
+    .box {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 15px;
+        background-color: azure;
+    }
+
+    .one-left {
+        width: 20%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content{
+        width: 40%;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+}
+
+/*Mobile small-Mid screen */
+@media screen and (max-width: 390px){
+    .Vcard-media {
+        width: 50%;
+        height: 50%;
+    }
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        margin: 5px 0 5px -19px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 15px;
+        background-color: azure;
+    }
+
+    .Notable-container {
+        margin: 20px 0 10px -25px;
+        width: 102.5%;
+    }
+
+    .ex {
+        margin: 0 0 10px -24px;
+        width: 86%;
+    }
+
+    .one-left {
+        width: 20%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content{
+        width: 40%;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+}
+
+/*Mobile Small screen */
+@media screen and (max-width: 375px) {
+    .Vcard-media {
+        width: 50%;
+        height: 50%;
+    }
+
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 77%;
+        margin: 5px 0 5px -20px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Notable-container {
+        margin: 0 0 10px -22px;
+        width: 98%;
+    }
+
+    .ex {
+        margin: 0 0 10px -24px;
+        width: 83%;
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 15px;
+        background-color: azure;
+    }
+
+    .one-left {
+        width: 20%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content {
+        width: 40%;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
+}
+
+/*Mobile Small screen */
+@media screen and (max-width: 360px){
+    .Vcard-media {
+        width: 50%;
+        height: 50%;
+    }
+    .vendprof-card {
+        border-radius: 15px;
+        box-shadow: 0 1px 10px 0.5px rgba(0, 0, 0, 0.1);
+        width: 73%;
+        margin: 5px 0 5px -20px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Notable-container {
+        margin: 0 0 10px -20px;
+        width: 93%;
+    }
+
+    .ex {
+        margin: 0 0 10px -22px;
+        width: 78%;
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 0 0 0 15px;
+        background-color: azure;
+    }
+
+    .one-left {
+        width: 20%;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one-content{
+        width: 40%;
+    }
+
+    .leftBar {
+        display: flex;
+        flex-grow: 1;
+        min-height: 20vh;
+        border-right: none;
+        width: 350px;
+    }
 }

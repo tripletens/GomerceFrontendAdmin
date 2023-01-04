@@ -17,23 +17,40 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 let name = 'Sony'
 
+
+const Bigbox = styled(Box)(({theme}) => ({
+  display: 'flex',
+  width: '100%',
+  [theme.breakpoints.down('sm')]:{
+    width: '100%',
+  }
+}))
+
+const HeaderContainer = styled(Stack)(({theme}) => ({
+    direction: "row",
+    flexWrap:"wrap",
+    justifyContent:"flex-start",
+    alignItems:"flex-start",
+    margin:"30px 10px",
+    [theme.breakpoints.down('sm')]:{
+      margin:'10px auto'
+    }
+}))
+
+
 const VendorProfile = () => {
   return (
       <>
-          <Box sx={{ display: 'flex' }}>
+          <Bigbox>
               <AppBarElement />
-              <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+              <Box component="main" sx={{ flexGrow: 1, p: 3}}>
                 <DrawerHeader />
-                <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    margin="30px 0" >
+                <HeaderContainer>
                     <DashboardHeader page={`${name} Profile` } title={` Hello, Vendor ${name}`} />
-                </Stack>
+                </HeaderContainer>
                 <VendorProf />  
               </Box>
-          </Box>
+          </Bigbox>
       </>
   )
 }

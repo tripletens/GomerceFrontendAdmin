@@ -10,6 +10,25 @@ import TableRow from '@mui/material/TableRow';
 import Pick from './Pick';
 import { grey } from '@mui/material/colors';
 
+import styled from '@emotion/styled';
+
+
+export const Epaper = styled(Paper)(({theme})=> ({
+  width: '100%', 
+  overflow: 'auto',
+
+  [theme.breakpoints.down("md")]: {
+   width: '96%',
+   margin: '0 0 0 -14px',
+  },
+
+  [theme.breakpoints.down("sm")]: {
+   width: '84%',
+   margin: '0',
+  }
+
+}))
+
 const columns = [
   { id: 'order_id', label: 'Order_ID', minWidth: 170 },
 
@@ -38,9 +57,13 @@ const columns = [
   },
 ];
 
+
+
 function createData(order_id, product_name, order_date, order_cost, status) {
   return { order_id, product_name, order_date, order_cost, status};
 }
+
+
 
 const rows = [
   createData('24541', 'Men Casual', 'Oct 12, 2022', '$210', 'completed'),
@@ -50,13 +73,16 @@ const rows = [
   createData('24541', '24541', 'Dec 12, 2022', '$290', 'Cancelled'	),
 ];
 
+
+
 const presentMonth = (control) => {
-    let my_date = new Date();
-    let today = my_date.getUTCDate();
-    let thisMonth = my_date.getMonth();
-    let thisYear = my_date.getFullYear();
-    return {Day: today, Month: thisMonth, Year: thisYear, control}
+  let my_date = new Date();
+  let today = my_date.getUTCDate();
+  let thisMonth = my_date.getMonth();
+  let thisYear = my_date.getFullYear();
+  return {Day: today, Month: thisMonth, Year: thisYear, control}
 }
+
 
 export default function OrderTable() {
 
@@ -77,7 +103,7 @@ export default function OrderTable() {
           let { Month, Day, Year } = presentMonth(null);
           if(out.control === -30) {
             Month -= 1;
-            Day = 30;
+            Day = 31;
           }
           setPeriod({ Month: months[Month], Day:Day,  Year:Year });
       } 
@@ -91,7 +117,7 @@ export default function OrderTable() {
   };
 
   return (
-    <Paper sx={{ width: '100%' }}>
+    <Epaper>
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -150,6 +176,6 @@ export default function OrderTable() {
         page={page}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage} />
-    </Paper>
+    </Epaper>
   );
 }
