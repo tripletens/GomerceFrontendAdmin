@@ -19,20 +19,26 @@ const setCalendar = useCallback((target) => {
     let months = [  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
                     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    const { Day, Month, Year, control } = presentMonth(target);
-
+    let { Day, Month, Year, control } = presentMonth(target);
+   
+    //This control the border of two different year
+    if(target === -1){
+      if(Month === 0){ target = 11; Year -= 1; }
+    }else if(target === -30){
+      if(Month === 0){ target = 12; Year -= 1; }
+    }
 
     switch (target) {
         case -30:
-          setOut({Month: months[Month-1], Day: 1, Year: Year, control: date });                   // Last month
-          break;
+            setOut({Month: months[Month-1], Day: 1, Year: Year, control: date });                   // Last month
+            break;
 
         case -1:
-            setOut({Month:months[Month+target], Day:(Day+target),Year:Year, control: date });     // Last 30 days cycle
+            setOut({Month:months[Month+target], Day:(Day+target),Year:Year, control: date }); // Last 30 days cycle 
             break;
 
         case 0:
-          setOut({Month: months[Month], Day:(Day-target), Year:Year, control: date });            // Today
+            setOut({Month: months[Month], Day:(Day-target), Year:Year, control: date });            // Today
             break;
 
         case 1:
@@ -40,7 +46,15 @@ const setCalendar = useCallback((target) => {
             break;
 
         case 6:
-          setOut({Month: months[Month], Day:(Day-target), Year:Year, control: date });            // Last seven days 
+            setOut({Month: months[Month], Day:(Day-target), Year:Year, control: date });            // Last seven days 
+            break;
+        
+        case 11:
+            setOut({Month:months[target], Day:(Day+1),Year:Year, control: date }); // Last 30 days cycle 
+            break;
+
+        case 12:
+            setOut({Month:months[11], Day:1, Year:Year, control: date }); // Last 30 days cycle 
             break;
     
         default:
