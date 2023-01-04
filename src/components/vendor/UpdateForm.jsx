@@ -117,7 +117,7 @@ const EStack = styled(Stack)({
     alignItems:'center',
     justifyContent:'space-between',
     margin:'20px 0',
-    width: '87.5%',
+    width: '730px',
     
     [theme.breakpoints.down('mobile_lg2')]:{
         justifyContent:'space-between',
@@ -160,7 +160,7 @@ const Mymedia = styled(CardMedia)({
 const Field = styled(TextField)({ 
    width: '40ch', 
    cursor : 'pointer',
-   margin: '0 0 0  50px',
+   margin: '0 0 0  -100%',
 
    [theme.breakpoints.down('mobile_lg2')]:{
         margin: '20px 0 0 0',
