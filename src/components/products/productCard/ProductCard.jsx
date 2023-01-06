@@ -19,6 +19,7 @@ const ProductCard = ({ product }) => {
         maxWidth="180"
         height="180"
         image={product.imageLink}
+        alt={product.alt}
       />
 
       <CardContent>

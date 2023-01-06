@@ -6,37 +6,44 @@ const sampleProducts = [
   {
     description: "mobile phone",
     price: "$100",
-    imageLink: "images/order-item.png",
+    imageLink: "images/phone_2.jpg",
+    alt: "image of product",
   },
   {
     description: "mobile phone",
     price: "$200",
-    imageLink: "images/order-item.png",
+    imageLink: "images/phone_2.jpg",
+    alt: "image of product",
   },
   {
     description: "mobile phone",
     price: "$300",
-    imageLink: "images/order-item.png",
+    imageLink: "images/phone_2.jpg",
+    alt: "image of product",
   },
   {
     description: "mobile phone",
     price: "$400",
-    imageLink: "images/order-item.png",
+    imageLink: "images/phone_2.jpg",
+    alt: "image of product",
   },
   {
     description: "mobile phone",
     price: "$1500",
-    imageLink: "images/order-item.png",
+    imageLink: "images/phone_2.jpg",
+    alt: "image of product",
   },
   {
     description: "mobile phone",
     price: "$1010",
-    imageLink: "images/order-item.png",
+    imageLink: "images/phone_2.jpg",
+    alt: "image of product",
   },
   {
     description: "mobile phone",
     price: "$2100",
-    imageLink: "images/order-item.png",
+    imageLink: "images/phone_2.jpg",
+    alt: "image of product",
   },
 ];
 
