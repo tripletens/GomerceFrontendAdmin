@@ -22,18 +22,3 @@ function PageHeader(props) {
 }
 
 export default PageHeader;
-
-{
-  /* <Stack direction="column">
-        <Typography variant="h5" sx={{ fontWeight: "bold", color: "#757575" }}>
-          {props.title}
-        </Typography>
-        <Stack direction="row" alignItems="center">
-          <Typography href="#" textDecoration="none">
-            Home
-          </Typography>
-          <ChevronRight />
-          <Typography> {props.page}</Typography>
-        </Stack>
-      </Stack> */
-}

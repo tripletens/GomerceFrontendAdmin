@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -17,8 +16,8 @@ const ProductCard = ({ product }) => {
     <Card>
       <CardMedia
         component="img"
-        maxWidth="150"
-        height="236"
+        maxWidth="180"
+        height="180"
         image={product.imageLink}
       />
 
@@ -26,14 +25,19 @@ const ProductCard = ({ product }) => {
         <Typography>{product.description}</Typography>
         <Typography>{product.price}</Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{ px: 2 }}>
         <Grid container justifyContent="space-between">
-          {/* <Button size="small">Edit</Button> */}
-          <IconButton color="primary">
+          <IconButton
+            color="primary"
+            sx={{ background: "#eee", borderRadius: 1, fontSize: 20 }}
+          >
             <EditIcon />
-            Edit
+            EDIT
           </IconButton>
-          <IconButton color="primary">
+          <IconButton
+            sx={{ background: "#eee", borderRadius: 1, fontSize: 20 }}
+            color="primary"
+          >
             <DeleteForeverIcon />
           </IconButton>
         </Grid>

@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 
 import TextField from "@mui/material/TextField";
-import { PhotoCamera, Send } from "@mui/icons-material";
+import { Close, PhotoCamera, Send } from "@mui/icons-material";
 
 import { Select, MenuItem, ListItemText } from "@mui/material";
-import SelectProductCategory from "../SelectProductCategory/SelectProductCategory";
+import CustomSelect from "../../CustomSelect/CustomSelect";
 
 const categories = [
   {
@@ -65,7 +65,7 @@ const MenuProps = {
   },
 };
 
-const ProductForm = () => {
+const ProductForm = ({ setOpen }) => {
   const [sizes, setSizes] = useState([]);
 
   const handleChange = (event) => {
@@ -98,10 +98,11 @@ const ProductForm = () => {
         <Box sx={{ display: "flex", gap: 2 }}>
           <TextField size="small" fullWidth label="Product name" />
 
-          <SelectProductCategory
+          <CustomSelect
             options={categories}
             size="small"
             name="categories"
+            fullWidth={true}
           />
         </Box>
 
@@ -162,6 +163,13 @@ const ProductForm = () => {
           </Button>
         </Grid>
       </FormControl>
+      <Close
+        onClick={(e) => setOpen(false)}
+        sx={{
+          "&:hover": { backgroundColor: "#000", color: "#fff" },
+          margin: " 0 10px",
+        }}
+      />
     </Grid>
   );
 };
