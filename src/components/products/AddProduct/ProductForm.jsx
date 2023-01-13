@@ -65,8 +65,15 @@ const MenuProps = {
   },
 };
 
-const ProductForm = ({ setOpen }) => {
+const ProductForm = ({ setOpen, onClose }) => {
+  const [productName, setProductName] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [color, setColor] = useState([]);
   const [sizes, setSizes] = useState([]);
+  const [price, setPrice] = useState("");
+  const [quantity, setQuantity] = useState();
+  const [tags, setTags] = useState([]);
 
   const handleChange = (event) => {
     const {
@@ -78,99 +85,139 @@ const ProductForm = ({ setOpen }) => {
     );
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    alert("New Product Submitted");
+    // try {
+    //   res = await axios.post(
+    //     "/products",
+
+    //     {
+    //       headers: { Authorization: `Bearers ${access_token}` },
+    //       withCredentials: true,
+    //     }
+    //   );
+    // } catch (error) {
+    //   console.log(error.response);
+    // }
+  };
+
   return (
-    <Grid
-      container
-      alignContent="center"
-      justifyContent="center"
-      sx={{ p: 2, height: "100%" }}
-    >
-      <FormControl
-        // fullWidth
-        sx={{
-          p: 2,
-          background: "white",
-          maxWidth: "900px",
-          width: "80%",
-          gap: 2,
-        }}
+    <>
+      <Grid
+        container
+        alignContent="center"
+        justifyContent="center"
+        sx={{ p: 2, height: "100%" }}
       >
-        <Box sx={{ display: "flex", gap: 2 }}>
-          <TextField size="small" fullWidth label="Product name" />
-
-          <CustomSelect
-            options={categories}
-            size="small"
-            name="categories"
-            fullWidth={true}
-          />
-        </Box>
-
-        <TextField
-          id="description"
-          sx={{ width: "100" }}
-          label="Description"
-          type="text"
-          size="large"
-          multiline
-          rows={3}
+        <Grid
+          item
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+          onClick={() => setOpen(false)}
         />
+        <FormControl
+          component="form"
+          onSubmit={handleSubmit}
+          sx={{
+            p: 2,
+            background: "white",
+            maxWidth: "900px",
+            width: "80%",
+            gap: 2,
+          }}
+        >
+          <Box sx={{ display: "flex", gap: 2 }}>
+            <TextField required size="small" fullWidth label="Product name" />
 
-        <Box sx={{ display: "flex", gap: 2 }}>
-          <TextField size="small" fullWidth label="Colors" type="color" />
-          <Select
-            fullWidth
-            label="Sizes (Multiple select)"
-            size="small"
-            multiple
-            value={sizes}
-            onChange={handleChange}
-            renderValue={(selected) => selected.join(", ")}
-            MenuProps={MenuProps}
-          >
-            {sizeOptions.map((size) => (
-              <MenuItem key={size} value={size}>
-                <ListItemText primary={size} />
-              </MenuItem>
-            ))}
-          </Select>
-        </Box>
+            <CustomSelect
+              options={categories}
+              size="small"
+              name="categories"
+              fullWidth={true}
+            />
+          </Box>
 
-        <Box sx={{ display: "flex", gap: 2 }}>
-          <TextField size="small" fullWidth label="Price" />
+          <TextField
+            required
+            id="description"
+            sx={{ width: "100" }}
+            label="Description"
+            type="text"
+            size="large"
+            multiline
+            rows={3}
+          />
 
-          <TextField size="small" fullWidth label="Quantity" />
-        </Box>
+          <Box sx={{ display: "flex", gap: 2 }}>
+            <TextField
+              required
+              size="small"
+              fullWidth
+              label="Colors"
+              type="color"
+            />
+            <Select
+              fullWidth
+              label="Sizes (Multiple select)"
+              size="small"
+              multiple
+              value={sizes}
+              onChange={handleChange}
+              renderValue={(selected) => selected.join(", ")}
+              MenuProps={MenuProps}
+            >
+              {sizeOptions.map((size) => (
+                <MenuItem key={size} value={size}>
+                  <ListItemText primary={size} />
+                </MenuItem>
+              ))}
+            </Select>
+          </Box>
 
-        <TextField size="small" label="Product tags" fullWidth />
-        <Grid item alignSelf="center">
-          <Button
-            component="label"
-            sx={{ margin: "18px 15px" }}
-            endIcon={<PhotoCamera />}
-          >
-            Upload Pictures
-            <input hidden accept="image/*" multiple type="file" />
-          </Button>
-          <Button
-            variant="contained"
-            color="success"
-            endIcon={<Send />}
-            sx={{ margin: "0px 18px" }}
-            size="small"
-          >
-            Submit
-          </Button>
-        </Grid>
-      </FormControl>
-      <Close
-        onClick={(e) => setOpen(false)}
-        sx={{
-          "&:hover": { backgroundColor: "#000", color: "#fff" },
-          margin: " 0 10px",
-        }}
-      />
-    </Grid>
+          <Box sx={{ display: "flex", gap: 2 }}>
+            <TextField required size="small" fullWidth label="Price" />
+
+            <TextField required size="small" fullWidth label="Quantity" />
+          </Box>
+
+          <TextField required size="small" label="Product tags" fullWidth />
+          <Grid item alignSelf="center">
+            <Button
+              component="label"
+              sx={{ margin: "18px 15px" }}
+              endIcon={<PhotoCamera />}
+            >
+              Upload Pictures
+              <input hidden accept="image/*" multiple type="file" />
+            </Button>
+            <Button
+              variant="contained"
+              color="success"
+              endIcon={<Send />}
+              sx={{ margin: "0px 18px" }}
+              size="small"
+              type="submit"
+            >
+              Submit
+            </Button>
+          </Grid>
+        </FormControl>
+        <Close
+          onClick={(e) => setOpen(false)}
+          sx={{
+            "&:hover": { backgroundColor: "#000", color: "#fff" },
+            margin: " 0 10px",
+            zIndex: 9999,
+          }}
+        />
+      </Grid>
+    </>
   );
 };
 
