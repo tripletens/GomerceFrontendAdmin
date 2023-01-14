@@ -1,19 +1,13 @@
 .dashboard_top_info_box{
-    width: auto;
-    /* background-color: #B69D74; */
+    width: 100%;
     background-color: #1F2839;
-    height: auto;
+    height: 130px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
     border-radius: 8px;
-    padding: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-    
+    padding: 20px;
 }
 
 .dashboard_top_info_box_left{
@@ -34,7 +28,7 @@
 
 
 .dashboard_top_info_box_right{
-    width: auto;
+    width: fit-content;
     border-radius: 8px;
     background-color: #F4F5EF;
     height: auto;
@@ -43,4 +37,5 @@
 
 .dashboard_top_info_box_right img{
     width: 32px;
+    height: 32px;
 }

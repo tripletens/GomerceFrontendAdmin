@@ -10,17 +10,17 @@ const SalesOrdersChart = () => {
   };
   return (
     <>
-      <div className="sales_orders_box">
+      <div id="sales_orders_pie_box" sx={{ sm:{ paddingBottom: "10px"},  }} style={{ marginTop:"50px" }}>
         <h4 className="sales_orders_header"> Orders Overview </h4>
-        <div className="sales_orders_chart">
-          <Chart
+        
+        <Chart
             options={config.options}
             series={config.series}
             type="donut"
             width="100%"
-            height="400px"
+            height="auto"
           />
-        </div>
+
       </div>
     </>
   );

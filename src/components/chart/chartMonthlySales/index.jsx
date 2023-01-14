@@ -26,7 +26,7 @@ const MonthlySalesChart = () => {
         series={config.series}
         type="bar"
         width="100%"
-        height="400px"
+        height="300px"
       />
     </>
   );
