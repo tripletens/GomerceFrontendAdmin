@@ -27,9 +27,7 @@ const Vendors = () => {
           <DrawerHeader />
           <Stack
             direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            margin="30px 0" >
+            className="header" >
             <DashboardHeader page="Vendors" title="Vendors Card" />
             <AddItemVendor />
           </Stack>

@@ -3,6 +3,7 @@ import { PersonAdd as AddIcon} from "@mui/icons-material";
 import { BootstrapButton, SytledModal } from './postStyle'
 import Form from "./Form";
 
+
 const AddItemVendor = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -11,7 +12,7 @@ const AddItemVendor = () => {
         onClick={(e) => setOpen(true)}
         variant="contained"
         startIcon={<AddIcon />} size="medium">
-        Add Vendor
+         Add Vendor
       </BootstrapButton>
 
       <SytledModal
