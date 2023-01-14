@@ -1,10 +1,9 @@
-// welcome to admin dashboard Reviews page
-// welcome to admin dashboard Users page
-import React from 'react';
+import { ThemeProvider } from "@emotion/react";
+import { theme } from "./style/custom-theme";
 import { styled } from '@mui/material/styles';
 import { Box, Grid } from "@mui/material";
 import AppBarElement from "../../components/appbar";
-import "./index.css";
+import { AllReviewsTable } from "../../components/reviews/allreviews";
 
 export const Reviews = () => {
   const DrawerHeader = styled('div')(({ theme }) => ({
@@ -23,13 +22,12 @@ export const Reviews = () => {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <DrawerHeader />
           <Grid container spacing={2}>
-            {/* add your own code here  */}
-            <h1>Welcome to Admin dashboard reviews</h1>
-            {/* add your own code here  */}
+            <ThemeProvider theme={theme}>
+              <AllReviewsTable />
+            </ThemeProvider>
           </Grid>
         </Box>
       </Box>
     </>
   );
 };
-

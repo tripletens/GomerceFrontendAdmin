@@ -4,6 +4,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import CreateCategoryForm from "../../pages/categories/createCategory";
+import CreateSubCategoryForm from "../../pages/categories/createSubCategory";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -70,8 +72,12 @@ export default function CategoryTab(props) {
             return (
               <>
                 <TabPanel value={value} index={key}>
-                    {item.title}
+                    {item.title === 'Categories' ? <CreateCategoryForm/> : "" }
+                    {item.title === 'SubCategories' ? <CreateSubCategoryForm/> : "" }
                 </TabPanel>
+                {/* <TabPanel value={value} index={key}>
+                    
+                </TabPanel> */}
               </>
             );
           })
