@@ -21,7 +21,6 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/vendors" element={<Vendors />} />
         <Route path="/profile" element={<VendorProfile />} />
-
         <Route path="/categories" element={<Categories />} />
 
         {/* <Route path="/singleVendor/:venId" element={ <Vendors /> } /> */}
@@ -29,7 +28,6 @@ const App = () => {
           <Route index element={<Categories />}/>
           <Route path="manage" element={<ManageCategories />} />
         </Route>
-        
         <Route path="/orders" element={<Orders />} />
         <Route path="/users" element={<Users />} />
         <Route path="/products" element={<Products />} />

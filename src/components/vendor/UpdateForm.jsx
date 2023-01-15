@@ -3,14 +3,181 @@ import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import { Stack } from '@mui/system';
 import { AttachFile } from '@mui/icons-material';
-import './vendorprof.css';
 import { CardMedia } from '@mui/material';
 import store from '../../my_db';
 import { MyButton } from './postStyle';
+import styled from '@emotion/styled';
+import { theme } from './breakpoints'
+import './vendorprof.css';
 
-// import { Close, PhotoCamera, Send } from '@mui/icons-material';
-// import { Button } from '@mui/material';
 
+const FieldContainer =  styled(Stack)({
+    flexDirection: 'row',
+    alignItems :'center',
+    justifyContent :'flex-start',
+    margin :'10px 20px 10px 5px',
+    width: '87%',
+
+    [theme.breakpoints.down('ipad')]:{
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems :'flex-start',
+        margin: '10px 0',
+        width: '100%',
+    },
+    [theme.breakpoints.down('mobile_lg2')]:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems :'center',
+        margin: '10px 0',
+        width: '80%',
+    },
+    [theme.breakpoints.down('mobile_md2')]:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems :'center',
+        margin: '10px 0',
+        width: '75%',
+    },
+    [theme.breakpoints.down('mobile_sm2')]:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems :'center',
+        margin: '10px 0 0 18px',
+        width: '55%',
+    }
+})
+
+const TextContainer =  styled(Stack)({
+    flexDirection:'row',
+    alignItems:'center', 
+    justifyContent:'space-between', 
+    margin:'20px 20px 0 5px',
+    width: '100%',
+    [theme.breakpoints.down('ipad')]:{
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems :'flex-start',
+        margin: '10px 0',
+        width: '100%',
+    },
+    [theme.breakpoints.down('mobile_lg2')]:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems :'center',
+        margin: '10px 0',
+        width: '80%',
+    },
+    
+    [theme.breakpoints.down('mobile_md2')]:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems :'center',
+        margin: '10px 0',
+        width: '75%',
+    },
+    
+    [theme.breakpoints.down('mobile_sm2')]:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems :'center',
+        margin: '10px 0 0 18px',
+        width: '55%',
+    }
+})
+
+const FieldName =  styled(TextField)({
+    m: 2, 
+    width: '40ch',
+    margin: '10px 0 10px 4px',
+    [theme.breakpoints.down('ipad')]:{
+       width: '38.5ch', 
+    },
+    [theme.breakpoints.down('mobile_lg2')]:{
+       width: '30ch', 
+    }
+})
+
+const FieldText =  styled(TextField)({
+    m: 2, 
+    width: '80ch',
+    margin: '10px 0 10px 5px',
+
+    [theme.breakpoints.down('ipad')]:{
+       width: '40ch', 
+    },
+
+    [theme.breakpoints.down('mobile_lg2')]:{
+       width: '30ch', 
+    }
+})
+
+const EStack = styled(Stack)({
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-between',
+    margin:'20px 0',
+    width: '87.5%',
+    
+    [theme.breakpoints.down('mobile_lg2')]:{
+        justifyContent:'space-between',
+        margin: '20px 0',
+        width: '310px',
+    },
+
+    [theme.breakpoints.down('mobile_md2')]:{
+        margin: '10px 0',
+        justifyContent:'space-between',
+        width: '270px',
+    },
+    
+    [theme.breakpoints.down('mobile_sm2')]:{
+        margin: '10px 0',
+        justifyContent:'space-between',
+        width: '270px',
+    },
+})
+
+
+const Mymedia = styled(CardMedia)({ 
+    width: 120, 
+    height: 120, 
+    borderRadius: '20px', 
+    marginBottom: '20px', 
+    margin:'20px 0 20px 5px',
+
+    [theme.breakpoints.down('mobile_lg2')]:{
+        margin: '20px 0',
+        width: '30%',
+    },
+
+    [theme.breakpoints.down('mobile_md2')]:{
+        margin: '20px 0',
+        width: '40%',
+    },
+})
+
+const Field = styled(TextField)({ 
+   width: '40ch', 
+   cursor : 'pointer',
+   margin: '0 0 0  50px',
+
+   [theme.breakpoints.down('mobile_lg2')]:{
+        margin: '20px 0 0 0',
+        marginLeft: '-50%',
+        width: '50%',
+   },
+
+    [theme.breakpoints.down('mobile_md2')]:{
+        margin: '20px 0 0 10px',
+        width: '60%'
+    },
+
+   [theme.breakpoints.down('mobile_sm2')]:{
+        margin: '20px 10px',
+        width: '50%'
+   }
+})
 
 export default function UpdateForm() {
      const { image } = store[0];
@@ -24,102 +191,93 @@ export default function UpdateForm() {
 
   return (
     <>
-        <Stack direction='row' alignItems='center' justifyContent='space-between' margin='0 20px'>
-            <CardMedia
-                sx={{width: 120, height: 120, borderRadius: '20px', marginBottom: '20px', marginTop:'20px'}}
+        <EStack>
+            <Mymedia
                 component="img"                                
                 image = {file}
-                className='writeImg' />
-                
-            <TextField
+                className='writeImg' />     
+            <Field
                 label={<AttachFile />}
-                sx={{ m: 2, width: '41ch', cursor:'pointer' }}
                 placeholder='Attach Fil'
                 onChange={handleChange}
                 type="file"
                 InputProps={{
                     startAdornment: <InputAdornment position="start" ></InputAdornment>,
                 }} />
-        </Stack>
+        </EStack>
 
-        <Stack direction='row' alignItems='center' justifyContent='space-between' margin='0 20px 0 5px'>
-            <TextField
-            label="First Name"
-            id="outlined-start-adornment"
-            sx={{ m: 2, width: '45ch' }}
-            placeholder='John'
-            InputProps={{
-                startAdornment: <InputAdornment position="start" ></InputAdornment>,
-            }} />
-            <TextField
-            label="Last Name"
-            id="outlined-start-adornment"
-            sx={{ m: 2, width: '45ch' }}
-            placeholder='Doe'
-            InputProps={{
-                startAdornment: <InputAdornment position="start" ></InputAdornment>,
-            }} />
-        </Stack>
+        <FieldContainer>
+            <FieldName
+                label="First Name"
+                id="outlined-start-adornment"
+                placeholder='John'
+                InputProps={{
+                    startAdornment: <InputAdornment position="start" ></InputAdornment>,
+                }} />
 
-        <Stack direction='row' alignItems='center' justifyContent='space-between' margin='20px 20px 0 5px'>          
-            <TextField
-            label="username"
-            id="outlined-start-adornment"
-            sx={{ m: 2, width: '120ch' }}
-            placeholder='jonskee'
-            InputProps={{
-                startAdornment: <InputAdornment position="start" ></InputAdornment>,
-            }} />
-        </Stack>
+            <FieldName
+                label="Last Name"
+                id="outlined-start-adornment"
+                placeholder='Doe'
+                InputProps={{
+                    startAdornment: <InputAdornment position="start" ></InputAdornment>,
+                }} />
+        </FieldContainer>
 
-        <Stack direction='row' alignItems='center' justifyContent='space-between' margin='20px 20px 0 5px'>          
-            <TextField
-            label="email"
-            type='email'
-            id="outlined-start-adornment"
-            sx={{ m: 2, width: '120ch' }}
-            placeholder='jonskee'
-            InputProps={{
-                startAdornment: <InputAdornment position="start" ></InputAdornment>,
-            }} />
-        </Stack>
+        <TextContainer>          
+            <FieldText
+                label="username"
+                id="outlined-start-adornment"
+                placeholder='jonskee'
+                InputProps={{
+                    startAdornment: <InputAdornment position="start" ></InputAdornment>,
+                }} />
+        </TextContainer>
 
-        <Stack direction='row' alignItems='center' justifyContent='space-between' margin='20px 20px 0 5px'>         
-            <TextField
-            label="Old password"
-            type="password"
-            id="outlined-start-adornment"
-            sx={{ m: 2, width: '120ch' }}
-            InputProps={{
-                startAdornment: <InputAdornment position="start" ></InputAdornment>,
-            }} />
-        </Stack>
+        <TextContainer>          
+            <FieldText
+                label="email"
+                type='email'
+                id="outlined-start-adornment"
+                placeholder='jonskee'
+                InputProps={{
+                    startAdornment: <InputAdornment position="start" ></InputAdornment>,
+                }} />
+        </TextContainer>
 
-        <Stack direction='row' alignItems='center' justifyContent='space-between' margin='20px 20px 0 5px'>
-            <TextField
-            label="New Password"
-            type="password"
-            id="outlined-start-adornment"
-            sx={{ m: 2, width: '120ch' }}
-            InputProps={{
-                startAdornment: <InputAdornment position="start" ></InputAdornment>,
-            }} />
-        </Stack>
+        <TextContainer>         
+            <FieldText
+                label="Old password"
+                type="password"
+                id="outlined-start-adornment"
+                InputProps={{
+                    startAdornment: <InputAdornment position="start" ></InputAdornment>,
+                }} />
+        </TextContainer>
 
-        <Stack direction='row' alignItems='center' justifyContent='space-between' margin='20px 20px 0 5px'>          
-            <TextField
-            label="Comfirm password"
-            type="password"
-            id="outlined-start-adornment"
-            sx={{ m: 2, width: '120ch' }}
-            InputProps={{
-                startAdornment: <InputAdornment position="start" ></InputAdornment>,
-            }} />
-        </Stack>
+        <TextContainer>
+            <FieldText
+                label="New Password"
+                type="password"
+                id="outlined-start-adornment"
+                InputProps={{
+                    startAdornment: <InputAdornment position="start" ></InputAdornment>,
+                }} />
+        </TextContainer>
 
-        <Stack direction='row' alignItems='center' justifyContent='flex-end' margin='20px 20px 0 5px'>          
+        <TextContainer>          
+            <FieldText
+                label="Comfirm password"
+                type="password"
+                id="outlined-start-adornment"
+                InputProps={{
+                    startAdornment: <InputAdornment position="start" ></InputAdornment>,
+                }} />
+        </TextContainer>
+
+        <TextContainer>          
             <MyButton variant='contained'>Update</MyButton>
-        </Stack>
+        </TextContainer>
 
     </>
   );

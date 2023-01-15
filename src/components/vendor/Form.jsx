@@ -5,7 +5,19 @@ import TextField from '@mui/material/TextField';
 import { Close, PhotoCamera, Send } from '@mui/icons-material';
 import { Stack } from '@mui/system';
 import { Button } from '@mui/material';
+import { theme } from './breakpoints'
+import styled from '@emotion/styled';
+import sx from '@mui/system/sx';
 
+
+const style =  styled(sx)({
+    m: 2, 
+    width: '35ch',
+    [theme.breakpoints.down('ipad')]:{
+        width: '45',
+        background: 'red',
+    }
+})
 
 export default function Form({setOpen}) {
 //   const [values, setValues] = React.useState({
@@ -39,7 +51,7 @@ export default function Form({setOpen}) {
             <TextField
             label="First Name"
             id="outlined-start-adornment"
-            sx={{ m: 2, width: '35ch' }}
+            style
             placeholder='John'
             size="small"
             InputProps={{
@@ -49,7 +61,8 @@ export default function Form({setOpen}) {
             <TextField
             label="Last Name"
             id="outlined-start-adornment"
-            sx={{ m: 2, width: '35ch' }}
+            sx={{ m: 2, width: '35ch',  background: 'red', }}
+            style
             placeholder='Doe'
             size="small"
             InputProps={{
@@ -58,6 +71,7 @@ export default function Form({setOpen}) {
             <TextField
             id="outlined-password-input"
             sx={{ m: 2, width: '35ch' }}
+            style
             label="username"
             type="text"
                 size="small"
@@ -66,6 +80,7 @@ export default function Form({setOpen}) {
             <TextField
             id="outlined-password-input"
             sx={{ m: 2, width: '35ch' }}
+            style
             label="Email"
             type="email"
                 size="small"
@@ -74,6 +89,7 @@ export default function Form({setOpen}) {
             <TextField
             id="outlined-password-input"
             sx={{ m: 2, width: '35ch' }}
+            style
             label="Password"
             type="password"
                 size="small"
@@ -82,6 +98,7 @@ export default function Form({setOpen}) {
             <TextField
             id="outlined-password-input"
             sx={{ m: 2, width: '35ch' }}
+            style
             label="Confirm Password"
             type="password"
                 size="small"
@@ -90,6 +107,7 @@ export default function Form({setOpen}) {
             <TextField
             id="outlined-number"
             sx={{ m: 2, width: '35ch' }}
+            style
             label="Country Code"
             type="number"
                 size="small"
@@ -99,6 +117,7 @@ export default function Form({setOpen}) {
             <TextField
             id="outlined-number"
             sx={{ m: 2, width: '35ch' }}
+            style
             label="Phone Number"
             type="number"
                 size="small"
@@ -108,8 +127,9 @@ export default function Form({setOpen}) {
             <TextField
             id="outlined-textarea"
             label="Sale Focus"
-                size="small"
-                sx={{ m: 2, width: '35ch' }}
+            size="small"
+            sx={{ m: 2, width: '35ch' }}
+            style
             placeholder="Placeholder"
             multiline
             /> 
@@ -126,6 +146,7 @@ export default function Form({setOpen}) {
             label="Date of Birth"
             size="small"
             sx={{ m: 2, width: '35ch' }}
+            style
             placeholder="Placeholder"
             multiline
             />
