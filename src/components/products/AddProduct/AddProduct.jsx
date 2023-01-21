@@ -11,7 +11,7 @@ const AddProduct = () => {
         Add Product
       </Button>
       <Modal open={open} onClose={() => setOpen(false)}>
-        <ProductForm />
+        <ProductForm setOpen={setOpen} />
       </Modal>
     </>
   );

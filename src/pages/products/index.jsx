@@ -5,9 +5,9 @@ import { Box, Grid } from "@mui/material";
 import AppBarElement from "../../components/appbar";
 import "./index.css";
 import { AllProducts } from "../../components/products";
-import ProductGrid from "./ProductGrid";
 import { theme } from "./style/custom-theme";
 import { ThemeProvider } from "@emotion/react";
+import ProductsComponent from "../../components/products/ProductsComponent";
 
 export const Products = () => {
   const DrawerHeader = styled("div")(({ theme }) => ({
@@ -27,10 +27,9 @@ export const Products = () => {
           <DrawerHeader />
           <Grid container spacing={2}>
             {/* add your own code here  */}
-            <h1>Welcome to Admin dashboard Products</h1>
             {/* <AllProducts/> */}
             <ThemeProvider theme={theme}>
-              <ProductGrid />
+              <ProductsComponent />
             </ThemeProvider>
 
             {/* add your own code here  */}

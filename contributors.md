@@ -1,2 +1,3 @@
 - [Ajiroghene Sunny](https://github.com/Ajioz)
+- [Delali Jean-Pierre Dogbevi](https://github.com/fodela)
 - [Aliu Salaudeen](https://github.com/Aliiiu)
