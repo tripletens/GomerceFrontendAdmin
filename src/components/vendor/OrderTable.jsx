@@ -97,17 +97,38 @@ export default function OrderTable() {
 
 
   useEffect(()=> {
+      let months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      let { Month, Day, Year } = presentMonth(null);
+
       const periods = () => {
-          let months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
-                          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-          let { Month, Day, Year } = presentMonth(null);
-          if(out.control === -30) {
+        if(out.control === -30) {
+          if(Month === 0){
+            Month = 11;
+            Day = 31;
+            Year -= 1;
+          }else{
             Month -= 1;
             Day = 31;
           }
-          setPeriod({ Month: months[Month], Day:Day,  Year:Year });
+        }
+        setPeriod({ Month: months[Month], Day:Day,  Year:Year });
       } 
+
+      const boundary = () => {
+        if(out.Day < 0){
+          if(Month === 0){
+            Month = 11;
+            Year -= 1;
+            Day = 31 + out.Day;
+          } 
+          else  Month -=1;
+          setOut({Month: months[Month], Day:(Day), Year });
+        }
+      }
+
       periods();
+      boundary();
   },[setPeriod, out]);
 
  
