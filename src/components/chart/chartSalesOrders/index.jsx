@@ -2,7 +2,15 @@ import React from "react";
 import Chart from "react-apexcharts";
 import "./index.css";
 
-const SalesOrdersChart = () => {
+// import { withWidth } from '@material-ui/core';
+
+// import withWidth from '@material-ui/core/withWidth';
+
+const SalesOrdersChart = (props) => {
+  const { width } = props;
+  const chartHeight = width === 'xs' ? 300 : 400;
+  const chartWidth = width === 'xs' ? '90%' : '100%';
+
   const config = {
     options: {},
     series: [44, 55, 41, 17, 15],
@@ -17,8 +25,8 @@ const SalesOrdersChart = () => {
             options={config.options}
             series={config.series}
             type="donut"
-            width="100%"
-            height="400px"
+            width={chartWidth}
+            height={chartHeight}
           />
         </div>
       </div>
