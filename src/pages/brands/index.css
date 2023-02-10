@@ -1,3 +1,7 @@
+.brands-header {
+  display: flex;
+  justify-content: space-between;
+}
 .brands-del-btn {
   display: flex;
   align-self: flex-end;
@@ -8,9 +12,9 @@ button {
 .brands-add-btn {
   background-color: darkslategrey;
   color: white;
-  margin-left: auto;
   padding: 0.5em 0.5em;
-  width: 15%;
+  /* margin-left: auto; */
+  /* width: 15%; */
 }
 .brands-modal {
   display: grid;
@@ -78,5 +82,13 @@ button {
 @media (max-width: 500px) {
   .modal-content {
     min-width: 85%;
+  }
+  .brands-header h1 {
+    font-size: 1em;
+  }
+}
+@media (max-width: 826px) {
+  .brands-header h1 {
+    font-size: 1.5em;
   }
 }
