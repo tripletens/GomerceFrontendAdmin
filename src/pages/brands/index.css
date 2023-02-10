@@ -1,72 +1,82 @@
-.brands-del-btn{
-   display: flex;
-   align-self: flex-end;
+.brands-del-btn {
+  display: flex;
+  align-self: flex-end;
 }
-button{
-   cursor: pointer;
+button {
+  cursor: pointer;
 }
-.brands-add-btn{
-   background-color: darkslategrey;
-   color: white;
-   margin-left: auto;
-   padding: .5em .5em;
-   width: 15%;
+.brands-add-btn {
+  background-color: darkslategrey;
+  color: white;
+  margin-left: auto;
+  padding: 0.5em 0.5em;
+  width: 15%;
 }
-.brands-modal{
-   display: grid;
-   grid-template-columns: .2fr 1fr .05fr;
-   padding: .3em 0;
+.brands-modal {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.05fr;
+  padding: 0.3em 0;
 }
-.brands-modal:hover{
-   background-color: aliceblue;
+.brands-modal:hover {
+  background-color: aliceblue;
 }
-.img-modal{
-   width: 50px;
+.img-modal {
+  width: 50px;
 }
-.modal-container{
-   position: fixed;
-   width: 100%;
-   z-index: 99999;
-   background-color: rgba(0, 0, 0, 0.3);
-   min-height: 100%;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   display: flex;
-   place-content: center;
-   align-items: center;
-   transition: all ease-in-out 3s;
+.modal-container {
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.3);
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  transition: all ease-in-out 3s;
 }
-.modal-content{
-   width: 30%;
-   background-color: white;
-   border-radius: 1.5em;
-   padding: 1em 1em;
-   animation: appear .5s;
+.modal-content {
+  width: 60%;
+  background-color: white;
+  border-radius: 1.5em;
+  padding: 1em 1em;
+  animation: appear 0.5s;
+  max-width: 25rem;
 }
-@keyframes appear{
-from{
-   transform: translateY(-100%);
-   opacity: 0;
+
+@keyframes appear {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
-to{
-   transform: translateX(0%);
-   opacity: 1;
+.inp-modal {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid rgba(128, 128, 128, 0.168);
+  border-radius: 0.5em;
+  margin-bottom: 1em;
 }
+.modal-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
 }
-.inp-modal{
-width: 100%;
-padding: 1em;
-border: 1px solid rgba(128, 128, 128, 0.168);
-border-radius: .5em;
-margin-bottom: 1em;
+.modal-btns button {
+  padding: 0.3em 0.5em;
+  width: 25%;
 }
-.modal-btns{
-   display: flex;
-   justify-content: flex-end;
-   gap: 1em;
-}
-.modal-btns button{
-   padding: .3em .5em;
-   width: 25%;
+
+/* MEDIA QUERIES */
+/* Small screens */
+@media (max-width: 500px) {
+  .modal-content {
+    min-width: 85%;
+  }
 }
