@@ -10,6 +10,7 @@ import { Products } from "./pages/products";
 import { Reviews } from "./pages/reviews";
 import { Brands } from "./pages/brands";
 import VendorProfile from "./pages/vendors/VendorProfile";
+import FourOfourPage from "./pages/404";
 import { ToastContainer } from "react-toastify";
 import { ManageCategories } from "./pages/categories/manageCategories";
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/brands" element={<Brands />} />
+        <Route path="/404" element={<FourOfourPage />} />
       </Routes>
       <ToastContainer />
     </>

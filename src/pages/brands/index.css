@@ -9,9 +9,12 @@ button{
    background-color: darkslategrey;
    color: white;
    margin-left: auto;
-   padding: .5em .5em;
-   width: 15%;
+   padding: 10px;
+   width: auto;
+   border-radius: 8px;
+   border:0px;
 }
+
 .brands-modal{
    display: grid;
    grid-template-columns: .2fr 1fr .05fr;
