@@ -33,7 +33,6 @@ const ProductCard = ({ product }) => {
             sx={{ background: "#eee", borderRadius: 1, fontSize: 20 }}
           >
             <EditIcon />
-            EDIT
           </IconButton>
           <IconButton
             sx={{ background: "#eee", borderRadius: 1, fontSize: 20 }}
