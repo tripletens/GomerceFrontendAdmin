@@ -132,80 +132,93 @@ const ProductForm = ({ setOpen, onClose }) => {
             gap: 2,
           }}
         >
-          <Box sx={{ display: "flex", gap: 2 }}>
-            <TextField required size="small" fullWidth label="Product name" />
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField required size="small" fullWidth label="Product name" />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <CustomSelect
+                options={categories}
+                size="small"
+                name="categories"
+                fullWidth={true}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                id="description"
+                sx={{ width: "100" }}
+                label="Description"
+                type="text"
+                size="large"
+                multiline
+                rows={3}
+              />
+            </Grid>
 
-            <CustomSelect
-              options={categories}
-              size="small"
-              name="categories"
-              fullWidth={true}
-            />
-          </Box>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                size="small"
+                fullWidth
+                label="Colors"
+                type="color"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Select
+                fullWidth
+                label="Sizes (Multiple select)"
+                size="small"
+                multiple
+                value={sizes}
+                onChange={handleChange}
+                renderValue={(selected) => selected.join(", ")}
+                MenuProps={MenuProps}
+              >
+                {sizeOptions.map((size) => (
+                  <MenuItem key={size} value={size}>
+                    <ListItemText primary={size} />
+                  </MenuItem>
+                ))}
+              </Select>
+            </Grid>
 
-          <TextField
-            required
-            id="description"
-            sx={{ width: "100" }}
-            label="Description"
-            type="text"
-            size="large"
-            multiline
-            rows={3}
-          />
+            <Grid item xs={12} sm={6}>
+              <TextField required size="small" fullWidth label="Price" />
+            </Grid>
 
-          <Box sx={{ display: "flex", gap: 2 }}>
-            <TextField
-              required
-              size="small"
-              fullWidth
-              label="Colors"
-              type="color"
-            />
-            <Select
-              fullWidth
-              label="Sizes (Multiple select)"
-              size="small"
-              multiple
-              value={sizes}
-              onChange={handleChange}
-              renderValue={(selected) => selected.join(", ")}
-              MenuProps={MenuProps}
-            >
-              {sizeOptions.map((size) => (
-                <MenuItem key={size} value={size}>
-                  <ListItemText primary={size} />
-                </MenuItem>
-              ))}
-            </Select>
-          </Box>
+            <Grid item xs={12} sm={6}>
+              <TextField required size="small" fullWidth label="Quantity" />
+            </Grid>
 
-          <Box sx={{ display: "flex", gap: 2 }}>
-            <TextField required size="small" fullWidth label="Price" />
+            <Grid item xs={12} sm={6}>
+              <TextField required size="small" label="Product tags" fullWidth />
+            </Grid>
 
-            <TextField required size="small" fullWidth label="Quantity" />
-          </Box>
-
-          <TextField required size="small" label="Product tags" fullWidth />
-          <Grid item alignSelf="center">
-            <Button
-              component="label"
-              sx={{ margin: "18px 15px" }}
-              endIcon={<PhotoCamera />}
-            >
-              Upload Pictures
-              <input hidden accept="image/*" multiple type="file" />
-            </Button>
-            <Button
-              variant="contained"
-              color="success"
-              endIcon={<Send />}
-              sx={{ margin: "0px 18px" }}
-              size="small"
-              type="submit"
-            >
-              Submit
-            </Button>
+            <Grid item xs={12} sm={6}>
+              <Button
+                component="label"
+                sx={{ margin: "auto" }}
+                endIcon={<PhotoCamera />}
+              >
+                Upload Pictures
+                <input hidden accept="image/*" multiple type="file" />
+              </Button>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Button
+                variant="contained"
+                color="success"
+                sx={{ margin: "0 auto" }}
+                // size="small"
+                type="submit"
+              >
+                Submit
+              </Button>
+            </Grid>
           </Grid>
         </FormControl>
         <Close

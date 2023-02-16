@@ -8,6 +8,7 @@ import "./index.css";
 import { Logos } from "./brandPop";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import ReusableModal from "./ReusableModal";
+
 import Paper from '@mui/material/Paper';
 
 export const BrandContext = createContext({});
@@ -47,6 +48,7 @@ export const Brands = () => {
           <AppBarElement />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <DrawerHeader />
+
             <Grid container spacing={2}  my={2} mx={4}>
               <Grid item xs={8} md={10}>
                   <h1>Welcome to Admin Brands</h1>

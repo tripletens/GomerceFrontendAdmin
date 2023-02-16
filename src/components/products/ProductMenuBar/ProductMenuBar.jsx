@@ -82,9 +82,9 @@ const ProductMenuBar = () => {
             size="small"
           />
           <CustomSelect options={sort} name="sort by" size="small" />
+          <AddProduct />
         </Grid>
       </Grid>
-      <AddProduct />
     </Grid>
   );
 };
