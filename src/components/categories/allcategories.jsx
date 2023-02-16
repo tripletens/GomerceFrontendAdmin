@@ -72,7 +72,7 @@ const headCells = [
   { id: "action", label: "Action", disableSorting: true },
 ];
 
-export const AllCategoriesTable = () => {
+export const AllCategoriesTableOne = () => {
   // const [page, setPage] = useState(0);
   // const [rowsPerPage, setRowsPerPage] = useState(5);
   // const [lastPage, setLastPage] = useState(0);
@@ -200,15 +200,11 @@ export const AllCategoriesTable = () => {
                   </StyledTableCell>
                 </StyledTableRow>
               ))}
-              {emptyRows > 0 && (
-                <StyledTableRow style={{ height: 35 * emptyRows }}>
-                  <StyledTableCell colSpan={12} />
-                </StyledTableRow>
-              )}
+              
             </TableBody>
             <TableFooter>
               <StyledTableRow>
-                <StyledTableCell colSpan={5} />
+                <StyledTableCell className="tableCell" colSpan={5} />
                 <TblPagination />
               </StyledTableRow>
             </TableFooter>
