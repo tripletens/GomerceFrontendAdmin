@@ -49,7 +49,7 @@ const sampleProducts = [
 
 const ProductGrid = () => {
   return (
-    <Grid container columnGap={2} direction="row" rowGap={2}>
+    <Grid container columnGap={4} direction="row" rowGap={4}>
       {sampleProducts.map((item) => (
         <Grid item>
           <ProductCard product={item} />
