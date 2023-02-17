@@ -208,16 +208,23 @@ const ProductForm = ({ setOpen, onClose }) => {
                 <input hidden accept="image/*" multiple type="file" />
               </Button>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <Button
-                variant="contained"
-                color="success"
-                sx={{ margin: "0 auto" }}
-                // size="small"
-                type="submit"
+            <Grid item xs={12} sm={12}>
+              <Box
+                component="span"
+                display="flex"
+                justifyContent="flex-end"
+                alignItems="center"
               >
-                Submit
-              </Button>
+                <Button
+                  variant="contained"
+                  color="success"
+                  // sx={{ margin: "0 auto" }}
+                  // size="small"
+                  type="submit"
+                >
+                  Submit
+                </Button>
+              </Box>
             </Grid>
           </Grid>
         </FormControl>
