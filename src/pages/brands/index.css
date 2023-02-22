@@ -6,15 +6,21 @@
   display: flex;
   align-self: flex-end;
 }
-button {
-  cursor: pointer;
+
+.brands-add-btn{
+   background-color: darkslategrey;
+   color: white;
+   margin-left: auto;
+   padding: 10px;
+   width: auto;
+   border-radius: 8px;
+   border:0px;
 }
-.brands-add-btn {
-  background-color: darkslategrey;
-  color: white;
-  padding: 0.5em 0.5em;
-  /* margin-left: auto; */
-  /* width: 15%; */
+
+.brands-modal{
+   display: grid;
+   grid-template-columns: .2fr 1fr .05fr;
+   padding: .3em 0;
 }
 .brands-modal {
   display: grid;

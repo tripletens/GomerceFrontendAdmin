@@ -3,7 +3,7 @@ import { theme } from "./style/custom-theme";
 import { styled } from '@mui/material/styles';
 import { Box, Grid } from "@mui/material";
 import AppBarElement from "../../components/appbar";
-import { AllCategoriesTable } from "../../components/categories/allcategories";
+import { AllCategoriesTable, AllCategoriesTableOne } from "../../components/categories/allcategories";
 
 
 export const Categories = () => {
@@ -25,7 +25,7 @@ export const Categories = () => {
           <DrawerHeader />
           <Grid container spacing={2}>
             <ThemeProvider theme={theme}>
-              <AllCategoriesTable />
+              <AllCategoriesTableOne />
             </ThemeProvider>
           </Grid>
         </Box>

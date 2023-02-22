@@ -2,12 +2,14 @@
 // welcome to admin dashboard Users page
 import React, { useState, createContext } from "react";
 import { styled } from "@mui/material/styles";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import AppBarElement from "../../components/appbar";
 import "./index.css";
 import { Logos } from "./brandPop";
 import DeleteIcon from "@mui/icons-material/DeleteOutlined";
 import ReusableModal from "./ReusableModal";
+
+import Paper from '@mui/material/Paper';
 
 export const BrandContext = createContext({});
 export const Brands = () => {
@@ -30,6 +32,15 @@ export const Brands = () => {
     const delArray = brands.filter((brand) => brand.id !== id);
     setBrands(delArray);
   }
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+  
   return (
     <>
       <BrandContext.Provider value={{ brands }}>
@@ -38,12 +49,16 @@ export const Brands = () => {
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <DrawerHeader />
 
-            <div className="brands-header">
-              <h1 className="brands-title">Welcome to Admin Brands</h1>
-              <Button className="brands-add-btn" onClick={seeModal}>
-                Add Brand
-              </Button>
-            </div>
+            <Grid container spacing={2}  my={2} mx={4}>
+              <Grid item xs={8} md={10}>
+                  <h1>Welcome to Admin Brands</h1>
+              </Grid>
+              <Grid item xs={4} md={2}>
+                  <button className="brands-add-btn" onClick={seeModal}>
+                    Add Brand
+                  </button>
+              </Grid>
+            </Grid>
 
             <Grid
               container
