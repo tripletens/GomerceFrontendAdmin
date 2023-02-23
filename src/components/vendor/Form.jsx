@@ -189,11 +189,12 @@ export default function Form({ setOpen }) {
             InputLabelProps={{
               shrink: true,
             }}
+            type="search"
             onChange={(event) => setCountryCode(event.target.value)}
           >
             {countryCodes.map((code) => (
               <MenuItem key={code.code} value={code.dial_code}>
-                {code.name}
+                {code.dial_code} - {code.name} 
               </MenuItem>
             ))}
           </TextField>

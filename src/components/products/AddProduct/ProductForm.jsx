@@ -7,6 +7,7 @@ import { Close, PhotoCamera, Send } from "@mui/icons-material";
 
 import { Select, MenuItem, ListItemText } from "@mui/material";
 import CustomSelect from "../../CustomSelect/CustomSelect";
+import CustomSelectSizes from "../../CustomSelectSizes/CustomSelect";
 
 const categories = [
   {
@@ -168,22 +169,33 @@ const ProductForm = ({ setOpen, onClose }) => {
               />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Select
+              <CustomSelectSizes
+                options={sizeOptions}
+                size="small"
+                name="sizes"
+                fullWidth={true}
+              />
+              {/* <Select
                 fullWidth
                 label="Sizes (Multiple select)"
                 size="small"
                 multiple
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
                 value={sizes}
                 onChange={handleChange}
                 renderValue={(selected) => selected.join(", ")}
                 MenuProps={MenuProps}
               >
+                <MenuItem value={""}>
+                    <ListItemText primary={"Select sizes"} />
+                </MenuItem>
                 {sizeOptions.map((size) => (
                   <MenuItem key={size} value={size}>
                     <ListItemText primary={size} />
                   </MenuItem>
                 ))}
-              </Select>
+              </Select> */}
             </Grid>
 
             <Grid item xs={12} sm={6}>
