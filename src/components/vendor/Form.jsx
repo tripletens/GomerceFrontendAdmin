@@ -4,9 +4,11 @@ import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 import { Close, PhotoCamera, Send } from "@mui/icons-material";
 import { Stack } from "@mui/system";
-import { Grid, Button, FormControl } from "@mui/material";
+import { Grid, Button, FormControl, Select, MenuItem } from "@mui/material";
 import styled from "@emotion/styled";
 import { theme } from "./breakpoints";
+
+import countryCodes from "../../assets/CountryCodes.json";
 
 // const Container = styled(Stack)({
 //   flexDirection: "column",
@@ -61,6 +63,15 @@ const Textcontainer = styled(Box)({
 // });
 
 export default function Form({ setOpen }) {
+  const [countryCode, setCountryCode] = React.useState("");
+  const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [formattedPhoneNumber, setFormattedPhoneNumber] = React.useState("");
+
+  const handleFormatPhoneNumber = (event) => {
+    setPhoneNumber(event.target.value.replace(countryCode, ""));
+    setFormattedPhoneNumber(`${countryCode}${phoneNumber}`);
+  };
+
   //   const [values, setValues] = React.useState({
   //     amount: '',
   //     password: '',
@@ -170,23 +181,32 @@ export default function Form({ setOpen }) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
+            select
             fullWidth
             id="outlined-number"
             label="Country Code"
-            type="number"
             size="small"
             InputLabelProps={{
               shrink: true,
             }}
-          />
+            onChange={(event) => setCountryCode(event.target.value)}
+          >
+            {countryCodes.map((code) => (
+              <MenuItem key={code.code} value={code.dial_code}>
+                {code.name}
+              </MenuItem>
+            ))}
+          </TextField>
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
             id="outlined-number"
             label="Phone Number"
-            type="number"
+            type="numeric"
             size="small"
+            value={`${countryCode}${phoneNumber}`}
+            onChange={(event) => handleFormatPhoneNumber(event)}
             InputLabelProps={{
               shrink: true,
             }}
